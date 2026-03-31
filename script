@@ -1,0 +1,123 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    
+    if(menuToggle) {
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => navMenu.classList.remove('active'));
+        });
+    }
+
+    function animateNumber(element, target) {
+        let current = 0;
+        const increment = target / 50;
+        const timer = setInterval(() => {
+            current += increment;
+            if(current >= target) {
+                element.textContent = target;
+                clearInterval(timer);
+            } else {
+                element.textContent = Math.floor(current);
+            }
+        }, 20);
+    }
+
+    function isElementInViewport(el) {
+        const rect = el.getBoundingClientRect();
+        return rect.top <= (window.innerHeight || document.documentElement.clientHeight) && rect.bottom >= 0;
+    }
+
+    const metricNumbers = document.querySelectorAll('.metric-number');
+    let numbersAnimated = false;
+    
+    function checkAndAnimateNumbers() {
+        if(numbersAnimated) return;
+        const metricsSection = document.querySelector('.hero-metrics');
+        if(metricsSection && isElementInViewport(metricsSection)) {
+            metricNumbers.forEach(metric => {
+                const target = parseInt(metric.getAttribute('data-count'));
+                if(target && metric.textContent === '0') {
+                    animateNumber(metric, target);
+                }
+            });
+            numbersAnimated = true;
+        }
+    }
+    
+    checkAndAnimateNumbers();
+    window.addEventListener('scroll', checkAndAnimateNumbers);
+
+    const contactForm = document.getElementById('contactForm');
+    const feedback = document.getElementById('formFeedback');
+    
+    if(contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name')?.value.trim();
+            const email = document.getElementById('email')?.value.trim();
+            const message = document.getElementById('message')?.value.trim();
+            
+            if(!name || !email || !message) {
+                feedback.innerHTML = '<span style="color:#c2410c;">⚠️ Preencha todos os campos obrigatórios.</span>';
+                setTimeout(() => feedback.innerHTML = '', 3000);
+                return;
+            }
+            
+            if(!email.includes('@')) {
+                feedback.innerHTML = '<span style="color:#c2410c;">⚠️ E-mail inválido.</span>';
+                setTimeout(() => feedback.innerHTML = '', 3000);
+                return;
+            }
+            
+            feedback.innerHTML = '<span style="color:#1e6f5c;">✅ Mensagem enviada! Entrarei em contato em breve.</span>';
+            contactForm.reset();
+            setTimeout(() => feedback.innerHTML = '', 5000);
+        });
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if(href === '#') return;
+            const target = document.querySelector(href);
+            if(target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    function highlightActiveNav() {
+        let current = '';
+        const scrollPos = window.pageYOffset + 150;
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionBottom = sectionTop + section.offsetHeight;
+            if(scrollPos >= sectionTop && scrollPos < sectionBottom) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if(link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+    }
+    
+    window.addEventListener('scroll', highlightActiveNav);
+    highlightActiveNav();
+    
+    const profileImg = document.getElementById('profile-img');
+    if(profileImg) {
+        profileImg.onerror = function() {
+            this.src = 'https://via.placeholder.com/400x500?text=Erigutemberg+Meneses';
+        };
+    }
+});

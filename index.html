@@ -1,247 +1,459 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <meta name="description" content="Site oficial de Erigutemberg Meneses - Advogado, economista, escritor e pesquisador independente. Pioneiro no Neurodireito no Brasil e autor com mais de 30 obras publicadas.">
-    <meta name="keywords" content="Erigutemberg Meneses, Neurodireito, escritor, advogado, economista, literatura, justiça neurocompatível">
-    <meta name="author" content="Erigutemberg Meneses">
-    <title>Erigutemberg Meneses | Site Oficial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Site oficial de Erigutemberg Meneses: advogado, economista, escritor e pesquisador de Neurodireito. Mais de 30 obras publicadas."/>
+  <meta name="keywords" content="Neurodireito, Direito Penal, Epigenética, Poesia, Sonetos, Blumenau, Recanto das Letras"/>
+  <meta property="og:title" content="Erigutemberg Meneses | Advogado • Escritor • Pesquisador"/>
+  <meta property="og:description" content="Pioneiro no Neurodireito no Brasil. Autor de mais de 30 obras literárias e acadêmicas."/>
+  <meta property="og:type" content="profile"/>
+  <title>Erigutemberg Meneses | Site Oficial</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --secondary: #c9a961;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --text: #333;
+      --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: #fff;
+    }
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: var(--shadow);
+    }
+    nav ul {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      list-style: none;
+      gap: 1.5rem;
+      padding: 0.5rem;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav a:hover, nav a:focus {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+    .hero {
+      text-align: center;
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--primary), #2c5282);
+      color: white;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .hero .subtitle {
+      font-style: italic;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+    .hero p {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+    .cta-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background: var(--secondary);
+      color: var(--dark);
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: var(--primary);
+    }
+    section {
+      padding: 3rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    section h2 {
+      color: var(--primary);
+      border-bottom: 3px solid var(--secondary);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+      text-align: center;
+    }
+    .stat-card {
+      background: var(--light);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+    }
+    .stat-card .number {
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--secondary);
+    }
+    .roles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+    .role-card {
+      background: var(--light);
+      padding: 1rem;
+      border-left: 4px solid var(--secondary);
+      border-radius: 0 4px 4px 0;
+    }
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .work-category h3 {
+      color: var(--primary);
+      margin: 1rem 0 0.5rem;
+      font-size: 1.3rem;
+    }
+    .work-category ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .work-category li {
+      padding: 0.3rem 0;
+      border-bottom: 1px dashed #ddd;
+    }
+    .external-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin: 1.5rem 0;
+    }
+    .external-links a {
+      background: var(--primary);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .external-links a:hover {
+      background: var(--secondary);
+      color: var(--dark);
+    }
+    form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      section {
+        padding: 2rem 1.5rem;
+      }
+    }
+    /* Smooth scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+    /* Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--secondary);
+      color: var(--dark);
+      padding: 0.5rem 1rem;
+      z-index: 200;
+    }
+    .skip-link:focus {
+      top: 0;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <div class="logo">
-                <a href="#">EM</a>
-            </div>
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#home" class="nav-link active">Início</a></li>
-                    <li><a href="#sobre" class="nav-link">Biografia</a></li>
-                    <li><a href="#literatura" class="nav-link">Literatura</a></li>
-                    <li><a href="#pesquisa" class="nav-link">Pesquisa</a></li>
-                    <li><a href="#obras" class="nav-link">Obras</a></li>
-                    <li><a href="#contato" class="nav-link">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="menu-toggle" id="menu-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
 
-    <section id="home" class="hero">
-        <div class="container hero-container">
-            <div class="hero-content">
-                <span class="hero-badge">Advogado • Economista • Escritor • Pesquisador</span>
-                <h1>Erigutemberg Meneses</h1>
-                <h2>José Erigutemberg Meneses de Lima</h2>
-                <div class="hero-description">
-                    <p><strong>Bem-vindo ao Site Oficial de Erigutemberg Meneses</strong></p>
-                    <p>Advogado, economista, escritor e pesquisador independente, radicado em Blumenau, Santa Catarina. Com uma trajetória multifacetada que une Direito, Neurociência e Literatura, Erigutemberg Meneses se destaca como <strong>pioneiro na discussão do Neurodireito no contexto brasileiro</strong> e como autor prolífico com mais de <strong>trinta obras publicadas</strong>.</p>
-                    <p class="hero-highlight">Sua produção acadêmica explora as interfaces entre epigenética, trauma intergeracional, neurodesenvolvimento adolescente e reformas no sistema de justiça juvenil, enquanto sua obra literária transita entre poesia, ficção, ensaios e crítica social com sensibilidade e profundidade.</p>
-                </div>
-                <div class="hero-buttons">
-                    <a href="#obras" class="btn btn-primary"><i class="fas fa-book-open"></i> Conheça as Obras</a>
-                    <a href="#pesquisa" class="btn btn-outline"><i class="fas fa-brain"></i> Pesquisa em Neurodireito</a>
-                </div>
-                <div class="hero-metrics">
-                    <div class="metric">
-                        <span class="metric-number" data-count="30">0</span>
-                        <span class="metric-label">Obras Publicadas</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-number" data-count="2100">0</span>
-                        <span class="metric-label">Textos no Recanto das Letras</span>
-                    </div>
-                    <div class="metric">
-                        <span class="metric-number" data-count="28">0</span>
-                        <span class="metric-label">Publicações no Clube de Autores</span>
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-photo-frame">
-                    <img src="Foto para Lattes.jpeg" alt="Erigutemberg Meneses" id="profile-img">
-                    <div class="photo-backdrop"></div>
-                </div>
-            </div>
-        </div>
+  <header>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li><a href="#biografia">Biografia</a></li>
+        <li><a href="#literatura">Literatura</a></li>
+        <li><a href="#pesquisa">Pesquisa</a></li>
+        <li><a href="#obras">Obras</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section id="inicio" class="hero">
+      <h1>Erigutemberg Meneses</h1>
+      <p class="subtitle">José Erigutemberg Meneses de Lima</p>
+      <p><strong>Advogado • Economista • Escritor • Pesquisador</strong></p>
+      <p>Bem-vindo ao Site Oficial. Com mais de trinta obras publicadas e pioneirismo na discussão do Neurodireito no Brasil, una trajetória que integra Direito, Neurociência e Literatura com profundidade e sensibilidade.</p>
+      <div class="cta-buttons">
+        <a href="#obras" class="btn">Conheça as Obras</a>
+        <a href="#pesquisa" class="btn btn-outline">Pesquisa em Neurodireito</a>
+      </div>
     </section>
 
-    <section id="sobre" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>Biografia</h2>
-                <div class="divider"></div>
-                <p>Trajetória acadêmica, profissional e literária</p>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Trajetória Acadêmica e Profissional</h3>
-                    <p>Natural de Fortaleza (CE), José Erigutemberg Meneses de Lima construiu uma carreira singular que combina a prática jurídica com a pesquisa acadêmica e a criação literária. Formado em Direito e em Ciências Econômicas pela Fundação Universidade Regional de Blumenau (FURB), atuou como advogado do Banco do Brasil até sua aposentadoria.</p>
-                    <p>Como advogado, dedica-se à prática jurídica com ênfase em temas que articulam Direito, Neurociência e Justiça Criminal, sendo reconhecido como <strong>pioneiro na discussão do Neurodireito no Brasil</strong>. Sua produção acadêmica investiga as implicações da neurociência para o Direito Penal, explorando interfaces entre epigenética, trauma intergeracional e neurodesenvolvimento adolescente.</p>
-                    
-                    <h3>Reconhecimento Acadêmico</h3>
-                    <p>Seus artigos científicos estão presentes em importantes repositórios acadêmicos como SSRN, com publicações sobre justiça neurocompatível e modelos institucionais baseados em evidências. Sua monografia sobre <strong>"Neurodireito: Repercussão e Implicações da Neurociência para o Direito Penal" (2013)</strong> é referência na área, citada em diversas teses de doutorado e trabalhos acadêmicos em todo o Brasil.</p>
-                </div>
-                <div class="about-cards">
-                    <div class="about-card-small">
-                        <i class="fas fa-gavel"></i>
-                        <h4>Advogado</h4>
-                        <p>Especialista em Direito Penal e Neurodireito</p>
-                    </div>
-                    <div class="about-card-small">
-                        <i class="fas fa-chart-line"></i>
-                        <h4>Economista</h4>
-                        <p>Formado pela FURB</p>
-                    </div>
-                    <div class="about-card-small">
-                        <i class="fas fa-brain"></i>
-                        <h4>Pesquisador</h4>
-                        <p>Pioneiro em Neurodireito no Brasil</p>
-                    </div>
-                    <div class="about-card-small">
-                        <i class="fas fa-feather-alt"></i>
-                        <h4>Escritor</h4>
-                        <p>Mais de 30 obras publicadas</p>
-                    </div>
-                </div>
-            </div>
-            <div class="lattes-info">
-                <a href="https://orcid.org/0009-0009-5108-0585" target="_blank" class="btn-lattes"><i class="fab fa-orcid"></i> ORCID</a>
-                <a href="#" target="_blank" class="btn-lattes"><i class="fas fa-scroll"></i> Currículo Lattes</a>
-                <a href="https://clubedeautores.com.br/autor/erigutemberg-meneses" target="_blank" class="btn-lattes"><i class="fas fa-book"></i> Clube de Autores</a>
-            </div>
-        </div>
+    <section id="biografia">
+      <h2>Biografia</h2>
+      <p><strong>Trajetória Acadêmica e Profissional</strong><br>
+      Natural de Fortaleza (CE), José Erigutemberg Meneses de Lima construiu uma carreira singular que combina a prática jurídica com a pesquisa acadêmica e a criação literária. Formado em Direito e em Ciências Econômicas pela Fundação Universidade Regional de Blumenau (FURB), atuou como advogado do Banco do Brasil até sua aposentadoria.</p>
+      
+      <p>Como advogado, dedica-se à prática jurídica com ênfase em temas que articulam Direito, Neurociência e Justiça Criminal, sendo reconhecido como pioneiro na discussão do Neurodireito no Brasil. Sua produção acadêmica investiga as implicações da neurociência para o Direito Penal, explorando interfaces entre epigenética, trauma intergeracional e neurodesenvolvimento adolescente.</p>
+
+      <h3 style="margin:1.5rem 0 1rem; color:var(--primary)">Reconhecimento Acadêmico</h3>
+      <p>Seus artigos científicos estão presentes em importantes repositórios acadêmicos como SSRN, com publicações sobre justiça neurocompatível e modelos institucionais baseados em evidências. Sua monografia sobre "Neurodireito: Repercussão e Implicações da Neurociência para o Direito Penal" (2013) é referência na área, citada em diversas teses de doutorado e trabalhos acadêmicos em todo o Brasil.</p>
+
+      <div class="roles-grid">
+        <div class="role-card"><strong>Advogado</strong><br>Especialista em Direito Penal e Neurodireito</div>
+        <div class="role-card"><strong>Economista</strong><br>Formado pela FURB</div>
+        <div class="role-card"><strong>Pesquisador</strong><br>Pioneiro em Neurodireito no Brasil</div>
+        <div class="role-card"><strong>Escritor</strong><br>Mais de 30 obras publicadas</div>
+      </div>
+
+      <div class="external-links">
+        <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
+        <a href="http://lattes.cnpq.br/" target="_blank" rel="noopener">Currículo Lattes</a>
+        <a href="https://www.clubedeautores.com.br/" target="_blank" rel="noopener">Clube de Autores</a>
+      </div>
     </section>
 
-    <section id="literatura" class="literature">
-        <div class="container">
-            <div class="section-header">
-                <h2>Produção Literária</h2>
-                <div class="divider"></div>
-                <p>Um autor multifacetado que transita com maestria entre gêneros e linguagens</p>
-            </div>
-            <div class="literature-stats">
-                <div class="stat-badge"><i class="fas fa-file-alt"></i> <span>2.100+ textos no Recanto das Letras</span></div>
-                <div class="stat-badge"><i class="fas fa-trophy"></i> <span>Autor do Clube de Autores</span></div>
-                <div class="stat-badge"><i class="fas fa-rocket"></i> <span>Alta produtividade</span></div>
-                <div class="stat-badge"><i class="fas fa-chart-line"></i> <span>Autor virou assunto</span></div>
-            </div>
-            <div class="literature-quote">
-                <i class="fas fa-quote-left"></i>
-                <p>Erigutemberg Meneses dedica-se às letras, escrevendo prosa na forma de crônicas, contos, ensaios, textos de crítica social e poesia com sensibilidade ímpar.</p>
-                <span>- Clube de Autores</span>
-            </div>
-            <div class="style-info">
-                <h3>Estilo e Influências</h3>
-                <p>Sua produção poética é marcada pela forma clássica do soneto, combinada com temática contemporânea, sensibilidade emocional e experimentação estética. Fusiona influências literárias de Torquato Neto e Paulo Leminski com musicalidade brasileira, explorando narrativas fragmentadas, memória coletiva e subjetividade humana.</p>
-            </div>
+    <section id="literatura">
+      <h2>Produção Literária</h2>
+      <p>Um autor multifacetado que transita com maestria entre gêneros e linguagens.</p>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="number">30+</div>
+          <div>Obras Publicadas</div>
         </div>
+        <div class="stat-card">
+          <div class="number">2.100+</div>
+          <div>Textos no Recanto das Letras</div>
+        </div>
+        <div class="stat-card">
+          <div class="number">15+</div>
+          <div>Publicações no Clube de Autores</div>
+        </div>
+      </div>
+
+      <p>Erigutemberg Meneses dedica-se às letras, escrevendo prosa na forma de crônicas, contos, ensaios, textos de crítica social e poesia com sensibilidade ímpar.</p>
+
+      <h3 style="margin:1.5rem 0 0.5rem; color:var(--primary)">Estilo e Influências</h3>
+      <p>Sua produção poética é marcada pela forma clássica do soneto, combinada com temática contemporânea, sensibilidade emocional e experimentação estética. Fusiona influências literárias de Torquato Neto e Paulo Leminski com musicalidade brasileira, explorando narrativas fragmentadas, memória coletiva e subjetividade humana.</p>
     </section>
 
-    <section id="pesquisa" class="research">
-        <div class="container">
-            <div class="section-header">
-                <h2>Pesquisa e Inovação</h2>
-                <div class="divider"></div>
-                <p>Neurodireito e Justiça Neurocompatível</p>
-            </div>
-            <div class="research-content">
-                <div class="research-main">
-                    <div class="research-icon"><i class="fas fa-brain"></i></div>
-                    <div class="research-text">
-                        <h3>Pioneiro no Neurodireito no Brasil</h3>
-                        <p>Erigutemberg Meneses é referência nacional na discussão do Neurodireito, ramo interdisciplinar que investiga as interfaces entre Direito e Neurociência. Seus trabalhos mais recentes incluem:</p>
-                        <ul class="research-list">
-                            <li><i class="fas fa-check-circle"></i> "Neurocompatible Justice: An Evidence-Based Institutional Model" (SSRN, 2025)</li>
-                            <li><i class="fas fa-check-circle"></i> Pesquisas sobre justiça restaurativa e reforma do sistema penal</li>
-                            <li><i class="fas fa-check-circle"></i> Estudos sobre epigenética e trauma intergeracional no contexto jurídico</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="publications-timeline">
-                    <h3>Publicações Recentes (ORCID)</h3>
-                    <div class="timeline-grid">
-                        <div class="timeline-item"><span class="year">2026</span><p>Livros pela Editora Dialética (ISBN: 9786527411789 e 9786527409823)</p></div>
-                        <div class="timeline-item"><span class="year">2026</span><p>Livro pelo Clube de Autores (ISBN: 9786501905525)</p></div>
-                        <div class="timeline-item"><span class="year">2025</span><p>Publicações pelo Clube de Autores (ISBNs: 9786501568546 e 9786501830988)</p></div>
-                        <div class="timeline-item"><span class="year">2025</span><p>Artigo científico no SSRN (DOI: 10.2139/ssrn.5879522)</p></div>
-                        <div class="timeline-item"><span class="year">2020-21</span><p>Artigos na Revista Jurídica – UNICURITIBA (ISSN: 2316-753X)</p></div>
-                    </div>
-                </div>
-                <div class="innovation-section">
-                    <h3><i class="fas fa-qrcode"></i> Inovação Tecnológica na Literatura</h3>
-                    <p><strong>Preservação Digital e Acessibilidade:</strong> Erigutemberg Meneses integra tecnologia e arte em seus projetos criativos</p>
-                    <div class="innovation-grid">
-                        <div class="innovation-card"><i class="fas fa-qrcode"></i><h4>QR Codes</h4><p>Em livros impressos, direcionam a conteúdos multimídia</p></div>
-                        <div class="innovation-card"><i class="fas fa-database"></i><h4>Preservação Digital</h4><p>Licenciamento Creative Commons para fins educacionais</p></div>
-                        <div class="innovation-card"><i class="fas fa-globe"></i><h4>Conteúdo Multimídia</h4><p>Integração entre obras físicas e digitais</p></div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section id="pesquisa">
+      <h2>Pesquisa e Inovação</h2>
+      <h3>Neurodireito e Justiça Neurocompatível</h3>
+      <p><strong>Pioneiro no Neurodireito no Brasil</strong><br>
+      Erigutemberg Meneses é referência nacional na discussão do Neurodireito, ramo interdisciplinar que investiga as interfaces entre Direito e Neurociência.</p>
+
+      <h4 style="margin:1rem 0 0.5rem">Trabalhos Recentes:</h4>
+      <ul style="margin-left:1.5rem; margin-bottom:1rem">
+        <li>"Neurocompatible Justice: An Evidence-Based Institutional Model" (SSRN, 2025)</li>
+        <li>Pesquisas sobre justiça restaurativa e reforma do sistema penal</li>
+        <li>Estudos sobre epigenética e trauma intergeracional no contexto jurídico</li>
+      </ul>
+
+      <h4 style="margin:1rem 0 0.5rem">Publicações Recentes (ORCID)</h4>
+      <ul style="margin-left:1.5rem">
+        <li><strong>2026:</strong> Livros pela Editora Dialética (ISBN: 9786527411789 e 9786527409823)</li>
+        <li><strong>2026:</strong> Livro pelo Clube de Autores (ISBN: 9786501905525)</li>
+        <li><strong>2025:</strong> Publicações pelo Clube de Autores (ISBNs: 9786501568546 e 9786501830988)</li>
+        <li><strong>2025:</strong> Artigo científico no SSRN (DOI: 10.2139/ssrn.5879522)</li>
+        <li><strong>2020-21:</strong> Artigos na Revista Jurídica – UNICURITIBA (ISSN: 2316-753X)</li>
+      </ul>
+
+      <h3 style="margin:2rem 0 1rem; color:var(--primary)">Inovação Tecnológica na Literatura</h3>
+      <div class="roles-grid">
+        <div class="role-card"><strong>QR Codes</strong><br>Em livros impressos, direcionam a conteúdos multimídia</div>
+        <div class="role-card"><strong>Preservação Digital</strong><br>Licenciamento Creative Commons para fins educacionais</div>
+        <div class="role-card"><strong>Conteúdo Multimídia</strong><br>Integração entre obras físicas e digitais</div>
+      </div>
     </section>
 
-    <section id="obras" class="works">
-        <div class="container">
-            <div class="section-header">
-                <h2>Obras Publicadas</h2>
-                <div class="divider"></div>
-                <p>Mais de 30 obras entre poesia, ensaios jurídicos, ficção e crítica social</p>
-            </div>
-            <div class="works-category"><h3><i class="fas fa-feather-alt"></i> Poesia / Sonetos</h3><div class="works-grid"><div class="work-card">Há Sempre Uma Mulher</div><div class="work-card">Letras do Coração</div><div class="work-card">Sonetos Mindinhos e Seus Vizinhos</div><div class="work-card">Rotas de Outono</div></div></div>
-            <div class="works-category"><h3><i class="fas fa-gavel"></i> Ensaio / Jurídico</h3><div class="works-grid"><div class="work-card">Neurodireito</div><div class="work-card">Artigos de Lei</div><div class="work-card">Teoria das Janelas Quebradas</div><div class="work-card">Neoliberalismo Judiciário</div><div class="work-card">Conselho Fiscal: Com Domínio das Contas</div></div></div>
-            <div class="works-category"><h3><i class="fas fa-book"></i> Ficção / Narrativa</h3><div class="works-grid"><div class="work-card">O Eclipse Perpétuo</div><div class="work-card">Protocolo Eros: Arquitetura do Sentir</div><div class="work-card">Mnemópolis Adormecida</div></div></div>
-            <div class="works-category"><h3><i class="fas fa-user-graduate"></i> Biografia / Memória</h3><div class="works-grid"><div class="work-card">Virgílio Várzea: Memórias das Velhas Gazetas</div><div class="work-card">Adolfo Caminha</div><div class="work-card">Quintino Cunha</div></div></div>
-            <div class="works-category"><h3><i class="fas fa-comments"></i> Crítica Social</h3><div class="works-grid"><div class="work-card">A Bíblia Não É Para Crianças</div><div class="work-card">Cartapácio Almanaqueano</div></div></div>
-            <div class="works-footer">
-                <a href="https://clubedeautores.com.br/autor/erigutemberg-meneses" target="_blank" class="btn-primary"><i class="fas fa-store"></i> Ver todas no Clube de Autores</a>
-                <a href="https://www.amazon.com/stores/author/B07QT9T8MR" target="_blank" class="btn-outline"><i class="fab fa-amazon"></i> Amazon Author Page</a>
-            </div>
+    <section id="obras">
+      <h2>Obras Publicadas</h2>
+      <p>Mais de 30 obras entre poesia, ensaios jurídicos, ficção e crítica social.</p>
+      
+      <div class="works-grid">
+        <div class="work-category">
+          <h3>📜 Poesia / Sonetos</h3>
+          <ul>
+            <li>Há Sempre Uma Mulher</li>
+            <li>Letras do Coração</li>
+            <li>Sonetos Mindinhos e Seus Vizinhos</li>
+            <li>Rotas de Outono</li>
+          </ul>
         </div>
+        <div class="work-category">
+          <h3>⚖️ Ensaio / Jurídico</h3>
+          <ul>
+            <li>Neurodireito</li>
+            <li>Artigos de Lei</li>
+            <li>Teoria das Janelas Quebradas</li>
+            <li>Neoliberalismo Judiciário</li>
+            <li>Conselho Fiscal: Com Domínio das Contas</li>
+          </ul>
+        </div>
+        <div class="work-category">
+          <h3>📖 Ficção / Narrativa</h3>
+          <ul>
+            <li>O Eclipse Perpétuo</li>
+            <li>Protocolo Eros: Arquitetura do Sentir</li>
+            <li>Mnemópolis Adormecida</li>
+          </ul>
+        </div>
+        <div class="work-category">
+          <h3>👤 Biografia / Memória</h3>
+          <ul>
+            <li>Virgílio Várzea: Memórias das Velhas Gazetas</li>
+            <li>Adolfo Caminha</li>
+            <li>Quintino Cunha</li>
+          </ul>
+        </div>
+        <div class="work-category">
+          <h3>💬 Crítica Social</h3>
+          <ul>
+            <li>A Bíblia Não É Para Crianças</li>
+            <li>Cartapácio Almanaqueano</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:2rem">
+        <a href="https://www.clubedeautores.com.br/autor/erigutemberg-meneses" target="_blank" rel="noopener" class="btn">Ver todas no Clube de Autores</a>
+        <a href="https://www.amazon.com.br/stores/author/" target="_blank" rel="noopener" class="btn" style="margin-left:0.5rem">Amazon Author Page</a>
+      </div>
     </section>
 
-    <section id="contato" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Contato</h2>
-                <div class="divider"></div>
-                <p>Para parcerias editoriais, palestras, workshops e projetos de pesquisa</p>
-            </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-card-detail"><i class="fas fa-envelope"></i><h4>E-mail</h4><p>erigutemberg.meneses@outlook.com</p></div>
-                    <div class="contact-card-detail"><i class="fas fa-map-marker-alt"></i><h4>Localização</h4><p>Blumenau, Santa Catarina, Brasil</p></div>
-                    <div class="contact-card-detail"><i class="fas fa-handshake"></i><h4>Disponível para</h4><p>Palestras sobre Neurodireito • Workshops de escrita criativa • Consultoria em preservação digital • Projetos de pesquisa interdisciplinares</p></div>
-                </div>
-                <form class="contact-form" id="contactForm">
-                    <input type="text" placeholder="Seu nome" id="name" required>
-                    <input type="email" placeholder="E-mail para contato" id="email" required>
-                    <input type="text" placeholder="Assunto" id="subject">
-                    <textarea rows="5" placeholder="Mensagem" id="message" required></textarea>
-                    <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Enviar mensagem</button>
-                    <div class="form-feedback" id="formFeedback"></div>
-                </form>
-            </div>
-        </div>
+    <section id="contato">
+      <h2>Contato</h2>
+      <p>Para parcerias editoriais, palestras, workshops e projetos de pesquisa.</p>
+      
+      <div style="margin:1.5rem 0; text-align:center">
+        <p><strong>📧 E-mail:</strong> <a href="mailto:erigutemberg.meneses@outlook.com">erigutemberg.meneses@outlook.com</a></p>
+        <p><strong>📍 Localização:</strong> Blumenau, Santa Catarina, Brasil</p>
+      </div>
+
+      <p style="margin-bottom:1.5rem"><strong>Disponível para:</strong><br>
+      Palestras sobre Neurodireito • Workshops de escrita criativa • Consultoria em preservação digital • Projetos de pesquisa interdisciplinares</p>
+
+      <form action="https://formsubmit.co/erigutemberg.meneses@outlook.com" method="POST">
+        <input type="hidden" name="_subject" value="Novo contato pelo site oficial">
+        <input type="hidden" name="_captcha" value="false">
+        
+        <label for="nome">Seu nome *</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail para contato *</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="assunto">Assunto *</label>
+        <input type="text" id="assunto" name="assunto" required>
+
+        <label for="mensagem">Mensagem *</label>
+        <textarea id="mensagem" name="mensagem" required></textarea>
+
+        <button type="submit" class="btn">Enviar mensagem</button>
+      </form>
     </section>
+  </main>
 
-    <footer class="footer">
-        <div class="container footer-container">
-            <p>&copy; 2026 Erigutemberg Meneses - Todos os direitos reservados. Alguns conteúdos disponíveis sob licença Creative Commons para fins educacionais.</p>
-            <div class="footer-icons">
-                <a href="https://orcid.org/0009-0009-5108-0585" target="_blank"><i class="fab fa-orcid"></i></a>
-                <a href="#" target="_blank"><i class="fas fa-university"></i></a>
-                <a href="https://clubedeautores.com.br/autor/erigutemberg-meneses" target="_blank"><i class="fas fa-book"></i></a>
-            </div>
-        </div>
-    </footer>
+  <footer>
+    <p>© 2026 Erigutemberg Meneses - Todos os direitos reservados.</p>
+    <p>Alguns conteúdos disponíveis sob licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a> para fins educacionais.</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <script>
+    // Smooth scroll para navegadores antigos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>

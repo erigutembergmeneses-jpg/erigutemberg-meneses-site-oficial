@@ -1,459 +1,429 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Site oficial de Erigutemberg Meneses: advogado, economista, escritor e pesquisador de Neurodireito. Mais de 30 obras publicadas."/>
-  <meta name="keywords" content="Neurodireito, Direito Penal, Epigenética, Poesia, Sonetos, Blumenau, Recanto das Letras"/>
-  <meta property="og:title" content="Erigutemberg Meneses | Advogado • Escritor • Pesquisador"/>
-  <meta property="og:description" content="Pioneiro no Neurodireito no Brasil. Autor de mais de 30 obras literárias e acadêmicas."/>
-  <meta property="og:type" content="profile"/>
-  <title>Erigutemberg Meneses | Site Oficial</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Erigutemberg Meneses | Direito · Neurociência · Literatura</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    :root {
-      --primary: #1a3a5c;
-      --secondary: #c9a961;
-      --light: #f8f9fa;
-      --dark: #212529;
-      --text: #333;
-      --shadow: 0 2px 10px rgba(0,0,0,0.1);
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: 'Georgia', serif;
-      line-height: 1.6;
-      color: var(--text);
-      background: #fff;
-    }
-    header {
-      background: var(--primary);
-      color: white;
-      padding: 1rem 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: var(--shadow);
-    }
-    nav ul {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      list-style: none;
-      gap: 1.5rem;
-      padding: 0.5rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      transition: background 0.3s;
-    }
-    nav a:hover, nav a:focus {
-      background: var(--secondary);
-      color: var(--dark);
-    }
-    .hero {
-      text-align: center;
-      padding: 4rem 2rem;
-      background: linear-gradient(135deg, var(--primary), #2c5282);
-      color: white;
-    }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .hero .subtitle {
-      font-style: italic;
-      opacity: 0.9;
-      margin-bottom: 1.5rem;
-    }
-    .hero p {
-      max-width: 800px;
-      margin: 0 auto 2rem;
-    }
-    .cta-buttons {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-    .btn {
-      background: var(--secondary);
-      color: var(--dark);
-      padding: 0.8rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      font-weight: 600;
-      text-decoration: none;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    }
-    .btn-outline {
-      background: transparent;
-      border: 2px solid white;
-      color: white;
-    }
-    .btn-outline:hover {
-      background: white;
-      color: var(--primary);
-    }
-    section {
-      padding: 3rem 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    section h2 {
-      color: var(--primary);
-      border-bottom: 3px solid var(--secondary);
-      padding-bottom: 0.5rem;
-      margin-bottom: 1.5rem;
-      font-size: 1.8rem;
-    }
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      margin: 2rem 0;
-      text-align: center;
-    }
-    .stat-card {
-      background: var(--light);
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: var(--shadow);
-    }
-    .stat-card .number {
-      font-size: 2rem;
-      font-weight: bold;
-      color: var(--secondary);
-    }
-    .roles-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem;
-      margin: 1.5rem 0;
-    }
-    .role-card {
-      background: var(--light);
-      padding: 1rem;
-      border-left: 4px solid var(--secondary);
-      border-radius: 0 4px 4px 0;
-    }
-    .works-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .work-category h3 {
-      color: var(--primary);
-      margin: 1rem 0 0.5rem;
-      font-size: 1.3rem;
-    }
-    .work-category ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    .work-category li {
-      padding: 0.3rem 0;
-      border-bottom: 1px dashed #ddd;
-    }
-    .external-links {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-    }
-    .external-links a {
-      background: var(--primary);
-      color: white;
-      padding: 0.6rem 1.2rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-size: 0.95rem;
-    }
-    .external-links a:hover {
-      background: var(--secondary);
-      color: var(--dark);
-    }
-    form {
-      max-width: 600px;
-      margin: 0 auto;
-      display: grid;
-      gap: 1rem;
-    }
-    input, textarea {
-      width: 100%;
-      padding: 0.8rem;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-    textarea {
-      min-height: 150px;
-      resize: vertical;
-    }
-    footer {
-      background: var(--dark);
-      color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
-      font-size: 0.9rem;
-    }
-    footer a {
-      color: var(--secondary);
-      text-decoration: none;
-    }
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-      }
-      .hero h1 {
-        font-size: 2rem;
-      }
-      section {
-        padding: 2rem 1.5rem;
-      }
-    }
-    /* Smooth scroll */
-    html {
+      background: #0a0c12;
+      font-family: 'Inter', sans-serif;
+      color: #eef2ff;
+      line-height: 1.5;
       scroll-behavior: smooth;
     }
-    /* Skip link for accessibility */
-    .skip-link {
-      position: absolute;
-      top: -40px;
-      left: 0;
-      background: var(--secondary);
-      color: var(--dark);
-      padding: 0.5rem 1rem;
-      z-index: 200;
-    }
-    .skip-link:focus {
+
+    /* dynamic gradient background */
+    .bg-aura {
+      position: fixed;
       top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: radial-gradient(circle at 20% 30%, #0b1120, #03060c);
+    }
+
+    .bg-aura::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, rgba(80, 120, 255, 0.02) 0px, rgba(80, 120, 255, 0.02) 2px, transparent 2px, transparent 8px);
+      pointer-events: none;
+    }
+
+    /* main container */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 2rem 4rem;
+      position: relative;
+    }
+
+    /* header with parallax effect */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+      margin-bottom: 3rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFFFFF, #A0C0FF, #6C8CFF);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .subhead {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #C0D0FF;
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .subhead span {
+      background: rgba(20, 30, 55, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    .hero-desc {
+      max-width: 780px;
+      margin: 1.5rem auto 0;
+      font-size: 1.1rem;
+      color: #cdd9ff;
+      border-left: 3px solid #3b82f6;
+      padding-left: 1.5rem;
+      text-align: left;
+    }
+
+    /* cards grid */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
+
+    .card {
+      background: rgba(12, 18, 34, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(66, 110, 210, 0.25);
+      transition: all 0.35s ease;
+      overflow: hidden;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.4);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.6);
+      box-shadow: 0 28px 35px -18px #1e2a5e40;
+      background: rgba(16, 24, 44, 0.75);
+    }
+
+    .card-icon {
+      font-size: 2.8rem;
+      color: #5d8eff;
+      margin-bottom: 1.2rem;
+    }
+
+    .card h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.8rem;
+    }
+
+    .stats {
+      display: flex;
+      gap: 1.8rem;
+      margin: 1.5rem 0 0.8rem;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+    }
+
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: white;
+      line-height: 1;
+    }
+
+    /* seção dupla */
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 4rem 0;
+      background: linear-gradient(115deg, rgba(8, 12, 28, 0.7), rgba(20, 28, 50, 0.5));
+      border-radius: 2rem;
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border: 1px solid rgba(70, 120, 240, 0.3);
+    }
+
+    .feature-text {
+      flex: 2;
+    }
+
+    .feature-text h2 {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      background: linear-gradient(120deg, #ffffff, #90aaff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.6rem;
+      border: 1px solid #4f7eff;
+      border-radius: 60px;
+      color: #c6ddff;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-outline:hover {
+      background: #2a4bcc50;
+      border-color: #8aaeff;
+      color: white;
+    }
+
+    .bookshelf {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .book-item {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      transition: all 0.2s;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .book-item strong {
+      display: block;
+      font-size: 1rem;
+      color: #bbd4ff;
+    }
+
+    .pill {
+      background: #1e2b4e;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      border-top: 1px solid rgba(80, 120, 255, 0.2);
+      padding-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (max-width: 760px) {
+      h1 { font-size: 2.8rem; }
+      .container { padding: 1rem; }
+      .hero { padding: 1.5rem 0.5rem; }
+      .subhead span { font-size: 0.8rem; }
+    }
+
+    .glow-text {
+      color: #b9d0ff;
+    }
+    .highlight {
+      color: #ffd966;
+    }
+    a {
+      text-decoration: none;
+    }
+    i.fab, i.fas {
+      margin-right: 6px;
     }
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">Pular para o conteúdo principal</a>
+<div class="bg-aura"></div>
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fas fa-brain"></i> PIONEIRO EM NEURODIREITO NO BRASIL
+    </div>
+    <h1>Erigutemberg Meneses</h1>
+    <div class="subhead">
+      <span>⚖️ Advogado</span>
+      <span>📊 Economista</span>
+      <span>📖 Escritor</span>
+      <span>🧠 Pesquisador</span>
+    </div>
+    <div class="hero-desc">
+      <i class="fas fa-quote-left" style="margin-right: 8px; opacity: 0.7;"></i> 
+      Mais de 30 obras publicadas · Pioneiro na interface entre Direito, Neurociência e Literatura. 
+      Referência nacional em justiça neurocompatível e inovação literária.
+    </div>
+  </div>
 
-  <header>
-    <nav aria-label="Navegação principal">
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li><a href="#biografia">Biografia</a></li>
-        <li><a href="#literatura">Literatura</a></li>
-        <li><a href="#pesquisa">Pesquisa</a></li>
-        <li><a href="#obras">Obras</a></li>
-        <li><a href="#contato">Contato</a></li>
+  <!-- BIO + DESTAQUES -->
+  <div class="feature-row">
+    <div class="feature-text">
+      <h2><i class="fas fa-user-astronaut"></i> Trajetória singular</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 0.8rem;">Natural de Fortaleza (CE), José Erigutemberg Meneses de Lima une prática jurídica, pesquisa acadêmica e criação literária. Formado em Direito e Ciências Econômicas pela FURB, atuou como advogado do Banco do Brasil até a aposentadoria.</p>
+      <p>Reconhecido como pioneiro no <strong class="highlight">Neurodireito no Brasil</strong>, sua produção acadêmica investiga epigenética, trauma intergeracional e neurodesenvolvimento adolescente. Seus artigos estão no SSRN e sua monografia "Neurodireito: Repercussões e Implicações da Neurociência para o Direito Penal" (2013) é referência nacional.</p>
+      <a href="#contato" class="btn-outline"><i class="fas fa-microphone-alt"></i> Convide para palestras</a>
+    </div>
+    <div style="flex: 1; background: rgba(0,0,0,0.3); border-radius: 1.5rem; padding: 1.5rem; text-align: center;">
+      <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: #6c8eff;"></i>
+      <div class="stats" style="justify-content: center; margin-top: 1rem;">
+        <div class="stat-item"><span class="stat-number">30+</span><br>Obras</div>
+        <div class="stat-item"><span class="stat-number">2.100+</span><br>Textos literários</div>
+        <div class="stat-item"><span class="stat-number">15+</span><br>Publicações autorais</div>
+      </div>
+      <div style="margin-top: 1rem;">
+        <span class="pill"><i class="fas fa-microchip"></i> Neurodireito vanguardista</span>
+        <span class="pill"><i class="fas fa-dna"></i> Epigenética & Direito</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARDS DE ÁREAS -->
+  <div class="grid-cards">
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-gavel"></i></div>
+      <h3>Neurodireito & Justiça</h3>
+      <p>Pesquisas sobre <strong>justiça neurocompatível</strong> e modelos institucionais baseados em evidências. Referência nacional com artigos no SSRN e DOI: 10.2139/ssrn.5879522 (2025).</p>
+      <div style="margin-top: 12px;"><i class="fas fa-scroll"></i> "Neurocompatible Justice: An Evidence-Based Institutional Model"</div>
+    </div>
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-feather-alt"></i></div>
+      <h3>Literatura Multifacetada</h3>
+      <p>Sonetos, crônicas, ensaios e crítica social. Fusão de Torquato Neto, Leminski e musicalidade brasileira. Livros físicos com QR codes e conteúdo multimídia.</p>
+      <div class="stats" style="margin-top: 12px;"><div class="stat-item"><span class="stat-number">12+</span><br>Livros de poesia</div><div class="stat-item"><span class="stat-number">8+</span><br>Ensaios jurídicos</div></div>
+    </div>
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-qrcode"></i></div>
+      <h3>Inovação Digital</h3>
+      <p>Preservação digital, licenciamento Creative Commons e obras híbridas. Integração entre edições impressas e conteúdos exclusivos online.</p>
+      <div><i class="fas fa-mobile-alt"></i> QR Codes em livros impressos para acesso a vídeos e artigos.</div>
+    </div>
+  </div>
+
+  <!-- OBRAS EM DESTAQUE COM ESTILO -->
+  <div style="margin: 3rem 0 2rem;">
+    <h2 style="font-size: 2rem; font-family: 'Playfair Display'; border-left: 5px solid #3b82f6; padding-left: 1rem;"><i class="fas fa-book-open"></i> Acervo Literário & Jurídico</h2>
+    <div class="bookshelf">
+      <div class="book-item"><strong>📜 Poesia / Sonetos</strong> Há Sempre Uma Mulher, Letras do Coração, Sonetos Mindinhos e Seus Vizinhos, Rotas de Outono</div>
+      <div class="book-item"><strong>⚖️ Ensaio Jurídico</strong> Neurodireito, Teoria das Janelas Quebradas, Neoliberalismo Judiciário, Conselho Fiscal</div>
+      <div class="book-item"><strong>📖 Ficção</strong> O Eclipse Perpétuo, Protocolo Eros: Arquitetura do Sentir, Mnemópolis Adormecida</div>
+      <div class="book-item"><strong>👤 Biografia/Memória</strong> Virgílio Várzea: Memórias das Velhas Gazetas, Adolfo Caminha, Quintino Cunha</div>
+      <div class="book-item"><strong>💬 Crítica Social</strong> A Bíblia Não É Para Crianças, Cartapácio Almanaqueano</div>
+    </div>
+  </div>
+
+  <!-- PRODUÇÃO RECENTE E ORCID COM DADOS IMPACTANTES -->
+  <div class="feature-row" style="flex-direction: row-reverse;">
+    <div class="feature-text">
+      <h2><i class="fas fa-chart-line"></i> Pesquisa & Reconhecimento</h2>
+      <ul style="margin-left: 1.2rem; list-style-type: none;">
+        <li><i class="fas fa-check-circle" style="color:#4c9aff;"></i> <strong>2026:</strong> Livros pela Editora Dialética (ISBN: 9786527411789 e 9786527409823)</li>
+        <li><i class="fas fa-check-circle" style="color:#4c9aff;"></i> <strong>2025:</strong> Artigo SSRN com DOI: 10.2139/ssrn.5879522 — Justiça Neurocompatível</li>
+        <li><i class="fas fa-check-circle" style="color:#4c9aff;"></i> <strong>Revista Jurídica UNICURITIBA</strong> (ISSN: 2316-753X) — artigos sobre direito e neurociência</li>
+        <li><i class="fas fa-graduation-cap"></i> Monografia “Neurodireito” citada em teses de doutorado em todo o Brasil</li>
       </ul>
-    </nav>
-  </header>
+      <p style="margin-top: 1rem;"> Pioneiro na interface entre epigenética, trauma intergeracional e justiça criminal, apresenta soluções inovadoras para o sistema de justiça baseadas em evidências neurocientíficas.</p>
+    </div>
+    <div style="flex: 0.8; background: linear-gradient(145deg, #09142e, #020617); border-radius: 1.8rem; padding: 1.8rem; text-align: center;">
+      <i class="fas fa-microscope" style="font-size: 2.8rem; color: #9bbaff;"></i>
+      <div style="font-weight: 700; margin: 0.8rem 0;">ORCID & SSRN</div>
+      <p style="font-size: 0.85rem;">Publicações recentes indexadas, modelo de justiça neurocompatível e discussão sobre neurodesenvolvimento adolescente.</p>
+      <div><span class="pill"><i class="fab fa-orcid"></i> Perfil acadêmico ativo</span></div>
+    </div>
+  </div>
 
-  <main id="main">
-    <section id="inicio" class="hero">
-      <h1>Erigutemberg Meneses</h1>
-      <p class="subtitle">José Erigutemberg Meneses de Lima</p>
-      <p><strong>Advogado • Economista • Escritor • Pesquisador</strong></p>
-      <p>Bem-vindo ao Site Oficial. Com mais de trinta obras publicadas e pioneirismo na discussão do Neurodireito no Brasil, una trajetória que integra Direito, Neurociência e Literatura com profundidade e sensibilidade.</p>
-      <div class="cta-buttons">
-        <a href="#obras" class="btn">Conheça as Obras</a>
-        <a href="#pesquisa" class="btn btn-outline">Pesquisa em Neurodireito</a>
+  <!-- PIONEIRISMO E TECNOLOGIA -->
+  <div style="background: rgba(0, 10, 30, 0.5); border-radius: 2rem; padding: 2rem; margin: 2rem 0; text-align: center; border: 1px solid #2d4070;">
+    <i class="fas fa-brain" style="font-size: 2.4rem; color: #ffbc6e;"></i>
+    <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">🇧🇷 Pioneiro no Neurodireito no Brasil</h3>
+    <p style="max-width: 800px; margin: 0 auto;">Com mais de uma década de pesquisa, Erigutemberg Meneses revoluciona o debate sobre Direito Penal e Neurociência, sendo referência em justiça restaurativa e reforma sistêmica baseada em evidências. Suas obras integram sensibilidade literária e rigor científico.</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+      <span class="pill"><i class="fas fa-dna"></i> Epigenética jurídica</span>
+      <span class="pill"><i class="fas fa-child"></i> Neurodesenvolvimento adolescente</span>
+      <span class="pill"><i class="fas fa-balance-scale"></i> Justiça neurocompatível</span>
+    </div>
+  </div>
+
+  <!-- CONTATO E ÁREAS DE ATUAÇÃO -->
+  <div id="contato" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-top: 3rem; background: radial-gradient(ellipse at left, #10192e, #03050b); border-radius: 2rem; padding: 2rem;">
+    <div style="flex:1">
+      <h3><i class="fas fa-map-marker-alt"></i> Localização & Conexão</h3>
+      <p><i class="fas fa-city"></i> Blumenau, Santa Catarina, Brasil</p>
+      <p><i class="fas fa-chalkboard"></i> Disponível para palestras sobre Neurodireito, workshops de escrita criativa, consultoria em preservação digital e projetos de pesquisa interdisciplinares.</p>
+      <div style="margin-top: 1rem;">
+        <a href="#" class="btn-outline" style="background: #1f2b4e;"><i class="fas fa-envelope"></i> Contato para eventos</a>
+        <a href="#" class="btn-outline" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i> Perfil acadêmico</a>
       </div>
-    </section>
-
-    <section id="biografia">
-      <h2>Biografia</h2>
-      <p><strong>Trajetória Acadêmica e Profissional</strong><br>
-      Natural de Fortaleza (CE), José Erigutemberg Meneses de Lima construiu uma carreira singular que combina a prática jurídica com a pesquisa acadêmica e a criação literária. Formado em Direito e em Ciências Econômicas pela Fundação Universidade Regional de Blumenau (FURB), atuou como advogado do Banco do Brasil até sua aposentadoria.</p>
-      
-      <p>Como advogado, dedica-se à prática jurídica com ênfase em temas que articulam Direito, Neurociência e Justiça Criminal, sendo reconhecido como pioneiro na discussão do Neurodireito no Brasil. Sua produção acadêmica investiga as implicações da neurociência para o Direito Penal, explorando interfaces entre epigenética, trauma intergeracional e neurodesenvolvimento adolescente.</p>
-
-      <h3 style="margin:1.5rem 0 1rem; color:var(--primary)">Reconhecimento Acadêmico</h3>
-      <p>Seus artigos científicos estão presentes em importantes repositórios acadêmicos como SSRN, com publicações sobre justiça neurocompatível e modelos institucionais baseados em evidências. Sua monografia sobre "Neurodireito: Repercussão e Implicações da Neurociência para o Direito Penal" (2013) é referência na área, citada em diversas teses de doutorado e trabalhos acadêmicos em todo o Brasil.</p>
-
-      <div class="roles-grid">
-        <div class="role-card"><strong>Advogado</strong><br>Especialista em Direito Penal e Neurodireito</div>
-        <div class="role-card"><strong>Economista</strong><br>Formado pela FURB</div>
-        <div class="role-card"><strong>Pesquisador</strong><br>Pioneiro em Neurodireito no Brasil</div>
-        <div class="role-card"><strong>Escritor</strong><br>Mais de 30 obras publicadas</div>
-      </div>
-
-      <div class="external-links">
-        <a href="https://orcid.org/" target="_blank" rel="noopener">ORCID</a>
-        <a href="http://lattes.cnpq.br/" target="_blank" rel="noopener">Currículo Lattes</a>
-        <a href="https://www.clubedeautores.com.br/" target="_blank" rel="noopener">Clube de Autores</a>
-      </div>
-    </section>
-
-    <section id="literatura">
-      <h2>Produção Literária</h2>
-      <p>Um autor multifacetado que transita com maestria entre gêneros e linguagens.</p>
-      
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="number">30+</div>
-          <div>Obras Publicadas</div>
-        </div>
-        <div class="stat-card">
-          <div class="number">2.100+</div>
-          <div>Textos no Recanto das Letras</div>
-        </div>
-        <div class="stat-card">
-          <div class="number">15+</div>
-          <div>Publicações no Clube de Autores</div>
-        </div>
-      </div>
-
-      <p>Erigutemberg Meneses dedica-se às letras, escrevendo prosa na forma de crônicas, contos, ensaios, textos de crítica social e poesia com sensibilidade ímpar.</p>
-
-      <h3 style="margin:1.5rem 0 0.5rem; color:var(--primary)">Estilo e Influências</h3>
-      <p>Sua produção poética é marcada pela forma clássica do soneto, combinada com temática contemporânea, sensibilidade emocional e experimentação estética. Fusiona influências literárias de Torquato Neto e Paulo Leminski com musicalidade brasileira, explorando narrativas fragmentadas, memória coletiva e subjetividade humana.</p>
-    </section>
-
-    <section id="pesquisa">
-      <h2>Pesquisa e Inovação</h2>
-      <h3>Neurodireito e Justiça Neurocompatível</h3>
-      <p><strong>Pioneiro no Neurodireito no Brasil</strong><br>
-      Erigutemberg Meneses é referência nacional na discussão do Neurodireito, ramo interdisciplinar que investiga as interfaces entre Direito e Neurociência.</p>
-
-      <h4 style="margin:1rem 0 0.5rem">Trabalhos Recentes:</h4>
-      <ul style="margin-left:1.5rem; margin-bottom:1rem">
-        <li>"Neurocompatible Justice: An Evidence-Based Institutional Model" (SSRN, 2025)</li>
-        <li>Pesquisas sobre justiça restaurativa e reforma do sistema penal</li>
-        <li>Estudos sobre epigenética e trauma intergeracional no contexto jurídico</li>
+    </div>
+    <div style="flex:1; border-left: 1px solid #2f4172; padding-left: 2rem;">
+      <h4><i class="fas fa-microphone-alt"></i> Temas para palestras</h4>
+      <ul style="list-style: none;">
+        <li><i class="fas fa-angle-right"></i> Neurodireito: revolução na justiça criminal</li>
+        <li><i class="fas fa-angle-right"></i> Justiça Neurocompatível: modelos baseados em evidências</li>
+        <li><i class="fas fa-angle-right"></i> Epigenética, trauma e responsabilidade penal</li>
+        <li><i class="fas fa-angle-right"></i> Literatura, memória e inovação digital</li>
       </ul>
-
-      <h4 style="margin:1rem 0 0.5rem">Publicações Recentes (ORCID)</h4>
-      <ul style="margin-left:1.5rem">
-        <li><strong>2026:</strong> Livros pela Editora Dialética (ISBN: 9786527411789 e 9786527409823)</li>
-        <li><strong>2026:</strong> Livro pelo Clube de Autores (ISBN: 9786501905525)</li>
-        <li><strong>2025:</strong> Publicações pelo Clube de Autores (ISBNs: 9786501568546 e 9786501830988)</li>
-        <li><strong>2025:</strong> Artigo científico no SSRN (DOI: 10.2139/ssrn.5879522)</li>
-        <li><strong>2020-21:</strong> Artigos na Revista Jurídica – UNICURITIBA (ISSN: 2316-753X)</li>
-      </ul>
-
-      <h3 style="margin:2rem 0 1rem; color:var(--primary)">Inovação Tecnológica na Literatura</h3>
-      <div class="roles-grid">
-        <div class="role-card"><strong>QR Codes</strong><br>Em livros impressos, direcionam a conteúdos multimídia</div>
-        <div class="role-card"><strong>Preservação Digital</strong><br>Licenciamento Creative Commons para fins educacionais</div>
-        <div class="role-card"><strong>Conteúdo Multimídia</strong><br>Integração entre obras físicas e digitais</div>
+      <div class="stats" style="margin-top: 1rem;">
+        <div class="stat-item"><i class="fas fa-book"></i> 30+ livros publicados</div>
+        <div class="stat-item"><i class="fas fa-brain"></i> 12 anos em Neurodireito</div>
       </div>
-    </section>
-
-    <section id="obras">
-      <h2>Obras Publicadas</h2>
-      <p>Mais de 30 obras entre poesia, ensaios jurídicos, ficção e crítica social.</p>
-      
-      <div class="works-grid">
-        <div class="work-category">
-          <h3>📜 Poesia / Sonetos</h3>
-          <ul>
-            <li>Há Sempre Uma Mulher</li>
-            <li>Letras do Coração</li>
-            <li>Sonetos Mindinhos e Seus Vizinhos</li>
-            <li>Rotas de Outono</li>
-          </ul>
-        </div>
-        <div class="work-category">
-          <h3>⚖️ Ensaio / Jurídico</h3>
-          <ul>
-            <li>Neurodireito</li>
-            <li>Artigos de Lei</li>
-            <li>Teoria das Janelas Quebradas</li>
-            <li>Neoliberalismo Judiciário</li>
-            <li>Conselho Fiscal: Com Domínio das Contas</li>
-          </ul>
-        </div>
-        <div class="work-category">
-          <h3>📖 Ficção / Narrativa</h3>
-          <ul>
-            <li>O Eclipse Perpétuo</li>
-            <li>Protocolo Eros: Arquitetura do Sentir</li>
-            <li>Mnemópolis Adormecida</li>
-          </ul>
-        </div>
-        <div class="work-category">
-          <h3>👤 Biografia / Memória</h3>
-          <ul>
-            <li>Virgílio Várzea: Memórias das Velhas Gazetas</li>
-            <li>Adolfo Caminha</li>
-            <li>Quintino Cunha</li>
-          </ul>
-        </div>
-        <div class="work-category">
-          <h3>💬 Crítica Social</h3>
-          <ul>
-            <li>A Bíblia Não É Para Crianças</li>
-            <li>Cartapácio Almanaqueano</li>
-          </ul>
-        </div>
-      </div>
-
-      <div style="text-align:center; margin-top:2rem">
-        <a href="https://www.clubedeautores.com.br/autor/erigutemberg-meneses" target="_blank" rel="noopener" class="btn">Ver todas no Clube de Autores</a>
-        <a href="https://www.amazon.com.br/stores/author/" target="_blank" rel="noopener" class="btn" style="margin-left:0.5rem">Amazon Author Page</a>
-      </div>
-    </section>
-
-    <section id="contato">
-      <h2>Contato</h2>
-      <p>Para parcerias editoriais, palestras, workshops e projetos de pesquisa.</p>
-      
-      <div style="margin:1.5rem 0; text-align:center">
-        <p><strong>📧 E-mail:</strong> <a href="mailto:erigutemberg.meneses@outlook.com">erigutemberg.meneses@outlook.com</a></p>
-        <p><strong>📍 Localização:</strong> Blumenau, Santa Catarina, Brasil</p>
-      </div>
-
-      <p style="margin-bottom:1.5rem"><strong>Disponível para:</strong><br>
-      Palestras sobre Neurodireito • Workshops de escrita criativa • Consultoria em preservação digital • Projetos de pesquisa interdisciplinares</p>
-
-      <form action="https://formsubmit.co/erigutemberg.meneses@outlook.com" method="POST">
-        <input type="hidden" name="_subject" value="Novo contato pelo site oficial">
-        <input type="hidden" name="_captcha" value="false">
-        
-        <label for="nome">Seu nome *</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="email">E-mail para contato *</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="assunto">Assunto *</label>
-        <input type="text" id="assunto" name="assunto" required>
-
-        <label for="mensagem">Mensagem *</label>
-        <textarea id="mensagem" name="mensagem" required></textarea>
-
-        <button type="submit" class="btn">Enviar mensagem</button>
-      </form>
-    </section>
-  </main>
+    </div>
+  </div>
 
   <footer>
-    <p>© 2026 Erigutemberg Meneses - Todos os direitos reservados.</p>
-    <p>Alguns conteúdos disponíveis sob licença <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">Creative Commons BY-NC-SA 4.0</a> para fins educacionais.</p>
+    <div>© 2026 Erigutemberg Meneses — Advogado • Escritor • Pesquisador</div>
+    <div><i class="fas fa-creative-commons"></i> Licenciamento Creative Commons para fins educacionais e culturais</div>
+    <div><i class="fas fa-qrcode"></i> Integração física-digital | Neurociência & Literatura</div>
   </footer>
-
-  <script>
-    // Smooth scroll para navegadores antigos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
+</div>
 </body>
 </html>

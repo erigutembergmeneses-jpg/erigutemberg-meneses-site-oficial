@@ -116,6 +116,30 @@
       text-align: left;
     }
 
+    /* Botão JusBrasil - estilo integrado */
+    .btn-jusbrasil {
+      display: inline-block;
+      background: #0057a3;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .btn-jusbrasil:hover {
+      background: #003f75;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,87,163,0.3);
+    }
+
+    .btn-jusbrasil i {
+      margin-right: 8px;
+    }
+
     /* cards grid */
     .grid-cards {
       display: grid;
@@ -303,6 +327,15 @@
       Mais de 30 obras publicadas · Pioneiro na interface entre Direito, Neurociência e Literatura. 
       Referência nacional em justiça neurocompatível e inovação literária.
     </div>
+    <!-- BOTÃO JUSBRASIL INSERIDO AQUI (HERO) -->
+    <div style="margin-top: 2rem;">
+      <a href="https://www.jusbrasil.com.br/artigos-noticias/busca?q=Erigutemberg&p=1" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="btn-jusbrasil">
+         <i class="fas fa-newspaper"></i> Ver notícias e artigos no JusBrasil
+      </a>
+    </div>
   </div>
 
   <!-- BIO + DESTAQUES -->
@@ -415,6 +448,16 @@
       <div class="stats" style="margin-top: 1rem;">
         <div class="stat-item"><i class="fas fa-book"></i> 30+ livros publicados</div>
         <div class="stat-item"><i class="fas fa-brain"></i> 12 anos em Neurodireito</div>
+      </div>
+      <!-- BOTÃO JUSBRASIL INSERIDO TAMBÉM AQUI (opcional, segunda via) -->
+      <div style="margin-top: 1.5rem;">
+        <a href="https://www.jusbrasil.com.br/artigos-noticias/busca?q=Erigutemberg&p=1" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="btn-jusbrasil" 
+           style="display: inline-block; font-size: 0.9rem; padding: 8px 18px;">
+           <i class="fas fa-newspaper"></i> Artigos no JusBrasil
+        </a>
       </div>
     </div>
   </div>

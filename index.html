@@ -3,354 +3,1544 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erigutemberg Meneses | Advogado, Economista, Escritor e Pesquisador independente</title>
+    <title>Erigutemberg Meneses | Advogado, Economista, Escritor e Pesquisador</title>
+    
+    <!-- SEO & Social Media -->
     <meta name="description" content="Erigutemberg Meneses - Pioneiro em Neurodireito no Brasil. Advogado, economista, escritor e pesquisador com mais de 30 obras publicadas.">
+    <meta name="keywords" content="neurodireito, direito, neurociência, literatura, poesia, ensaio jurídico, Blumenau">
+    <meta name="author" content="Erigutemberg Meneses">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="profile">
+    <meta property="og:title" content="Erigutemberg Meneses | Advogado & Escritor">
+    <meta property="og:description" content="Pioneiro em Neurodireito no Brasil. Mais de 30 obras publicadas.">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630/2c3e50/ffffff?text=Erigutemberg+Meneses">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Erigutemberg Meneses">
+    <meta name="twitter:description" content="Advogado, Economista, Escritor e Pesquisador em Neurodireito">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚖️</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Erigutemberg Meneses",
+      "jobTitle": ["Advogado", "Economista", "Escritor", "Pesquisador"],
+      "description": "Pioneiro em Neurodireito no Brasil",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Blumenau",
+        "addressRegion": "SC",
+        "addressCountry": "BR"
+      },
+      "url": "https://erigutemberg.com.br",
+      "sameAs": [
+        "https://www.recantodasletras.com.br/autor.php?id=201160",
+        "https://clubedeautores.com.br"
+      ]
+    }
+    </script>
+
     <style>
-        * {
+        /* ===== VARIÁVEIS CSS ===== */
+        :root {
+            --primary: #2c3e50;
+            --primary-dark: #1a252f;
+            --secondary: #3498db;
+            --secondary-light: #5dade2;
+            --accent: #667eea;
+            --accent-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --light: #f8f9fa;
+            --dark: #2c3e50;
+            --text: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 8px 25px rgba(0,0,0,0.12);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --container: 1200px;
+        }
+
+        /* ===== RESET & BASE ===== */
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-            padding: 40px 20px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            overflow: hidden;
-        }
-
-        /* Cabeçalho */
-        .header {
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
-
-        .header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .header .subtitle {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Conteúdo principal */
-        .content {
-            padding: 40px;
-        }
-
-        /* Tarja clicável */
-        .tarja-container {
-            text-align: center;
-            margin: 30px 0;
-        }
-
-        .tarja-clicavel {
-            display: inline-block;
-            background-color: #f0f0f0;
-            padding: 15px 30px;
-            border-radius: 8px;
-            border-left: 5px solid #3498db;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-
-        .tarja-clicavel:hover {
-            background-color: #e0e0e0;
-            transform: scale(1.02);
-        }
-
-        .tarja-clicavel span {
-            font-size: 1.2rem;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-
-        .tarja-aviso {
-            color: #888;
-            font-size: 0.8rem;
-            margin-top: 8px;
-        }
-
-        /* Descrição principal */
-        .descricao-principal {
-            text-align: center;
-            font-size: 1rem;
-            color: #555;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: var(--light);
+            color: var(--text);
             line-height: 1.6;
-            margin: 20px 0 30px 0;
-            padding: 20px;
-            background-color: #f8f9fa;
-            border-radius: 10px;
+            overflow-x: hidden;
         }
 
-        /* Cards de estatísticas */
-        .stats {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin: 40px 0;
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+            line-height: 1.3;
+            color: var(--primary);
         }
 
-        .stat-card {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 15px;
-            min-width: 120px;
-            transition: transform 0.3s;
-        }
-
-        .stat-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-        }
-
-        .stat-label {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-
-        /* Seção de links */
-        .links-section {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin: 40px 0;
-        }
-
-        .btn-link {
-            background-color: #2c3e50;
-            color: white;
-            padding: 12px 24px;
+        a {
+            color: var(--secondary);
             text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== UTILITÁRIOS ===== */
+        .container {
+            width: 100%;
+            max-width: var(--container);
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent-gradient);
+            border-radius: 2px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            margin-top: 15px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
             display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            background: var(--accent-gradient);
+            color: var(--white);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--secondary);
+            color: var(--secondary);
+        }
+
+        .btn-outline:hover {
+            background: var(--secondary);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            background: var(--accent-gradient);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* ===== NAVIGATION ===== */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 8px 0;
+            background: rgba(255, 255, 255, 0.98);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 24px;
+            max-width: var(--container);
+            margin: 0 auto;
+        }
+
+        .nav-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
             align-items: center;
             gap: 8px;
         }
 
-        .btn-link:hover {
-            background-color: #3498db;
+        .nav-logo span {
+            color: var(--secondary);
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            list-style: none;
+        }
+
+        .nav-link {
+            padding: 10px 18px;
+            color: var(--text);
+            font-weight: 500;
+            font-size: 0.95rem;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--secondary);
+            background: rgba(52, 152, 219, 0.1);
+        }
+
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 3px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 3px;
+            background: var(--primary);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            padding-top: 140px;
+            padding-bottom: 100px;
+            background: linear-gradient(135deg, rgba(44, 62, 80, 0.95) 0%, rgba(52, 152, 219, 0.9) 100%), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.03"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.03"/><circle cx="50" cy="10" r="0.5" fill="white" opacity="0.02"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.05); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-avatar {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            background: var(--accent-gradient);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            box-shadow: var(--shadow-lg);
+            border: 5px solid rgba(255,255,255,0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.4); }
+            50% { box-shadow: 0 0 0 20px rgba(102, 126, 234, 0); }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 16px;
+            color: var(--white);
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            margin-bottom: 24px;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-roles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 35px;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-role {
+            padding: 8px 20px;
+            background: rgba(255,255,255,0.15);
+            border-radius: 30px;
+            font-size: 0.95rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: var(--transition);
+        }
+
+        .hero-role:hover {
+            background: rgba(255,255,255,0.25);
             transform: translateY(-2px);
         }
 
-        .btn-link.azul {
-            background-color: #3498db;
+        .hero-description {
+            font-size: 1.15rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            animation: fadeInUp 0.8s ease-out 0.6s both;
         }
 
-        .btn-link.azul:hover {
-            background-color: #2c3e50;
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 16px;
+            animation: fadeInUp 0.8s ease-out 0.8s both;
         }
 
-        /* Seções de conteúdo */
-        .section {
-            margin: 40px 0;
+        .hero-buttons .btn {
+            padding: 16px 36px;
+            font-size: 1.05rem;
         }
 
-        .section h2 {
-            color: #2c3e50;
-            border-left: 4px solid #3498db;
-            padding-left: 15px;
-            margin-bottom: 20px;
+        .hero-buttons .btn-outline {
+            border-color: var(--white);
+            color: var(--white);
         }
 
-        .section-grid {
+        .hero-buttons .btn-outline:hover {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.95rem;
+            opacity: 0.85;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ===== TARJA DESTAQUE ===== */
+        .highlight-bar {
+            background: var(--white);
+            border-left: 5px solid var(--secondary);
+            padding: 20px 30px;
+            margin: 40px auto;
+            max-width: 800px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-bar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(52,152,219,0.1), transparent);
+            transition: left 0.5s;
+        }
+
+        .highlight-bar:hover::before {
+            left: 100%;
+        }
+
+        .highlight-bar:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .highlight-bar-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-bar-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gradient);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .highlight-bar-text h3 {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+
+        .highlight-bar-text p {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* ===== CARDS GRID ===== */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
         }
 
         .card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            transition: transform 0.3s;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 30px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
         }
 
         .card:hover {
-            transform: translateY(-3px);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--accent-gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            color: white;
+            margin-bottom: 20px;
         }
 
         .card h3 {
-            color: #3498db;
-            margin-bottom: 10px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
         }
 
-        .card ul {
+        .card p {
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+
+        .card-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .card-link i {
+            transition: transform 0.3s;
+        }
+
+        .card-link:hover i {
+            transform: translateX(4px);
+        }
+
+        /* ===== ACERVO SECTION ===== */
+        .acervo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .acervo-category {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .acervo-category:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .acervo-category h4 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--light);
+        }
+
+        .acervo-category ul {
             list-style: none;
-            padding-left: 0;
         }
 
-        .card li {
-            padding: 5px 0;
-            color: #555;
+        .acervo-category li {
+            padding: 8px 0;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+            transition: var(--transition);
+            cursor: pointer;
         }
 
-        /* Rodapé */
-        .footer {
-            background-color: #2c3e50;
-            color: white;
+        .acervo-category li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary);
+            font-weight: bold;
+        }
+
+        .acervo-category li:hover {
+            color: var(--secondary);
+            padding-left: 24px;
+        }
+
+        /* ===== TIMELINE ===== */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 100%;
+            background: var(--accent-gradient);
+            border-radius: 3px;
+        }
+
+        .timeline-item {
+            display: flex;
+            justify-content: flex-end;
+            padding-right: calc(50% + 30px);
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+            padding-right: 0;
+            padding-left: calc(50% + 30px);
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 24px;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            max-width: 400px;
+            transition: var(--transition);
+        }
+
+        .timeline-content:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-3px);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent-gradient);
+            border-radius: 50%;
+            border: 4px solid var(--white);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-date {
+            font-weight: 600;
+            color: var(--secondary);
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .timeline-content h4 {
+            margin-bottom: 8px;
+            font-size: 1.2rem;
+        }
+
+        .timeline-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* ===== CONTACT CTA ===== */
+        .contact-cta {
+            background: var(--accent-gradient);
+            border-radius: var(--radius-lg);
+            padding: 50px;
             text-align: center;
-            padding: 30px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .contact-cta h3 {
+            color: white;
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .contact-cta p {
+            opacity: 0.95;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .contact-cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--primary-dark);
+            color: rgba(255,255,255,0.85);
+            padding: 60px 0 30px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .footer-links h4 {
+            color: white;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.8);
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-links a:hover {
+            color: var(--secondary-light);
+            transform: translateX(4px);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .footer-social a:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
             font-size: 0.9rem;
+            opacity: 0.8;
         }
 
-        .footer a {
-            color: #3498db;
-            text-decoration: none;
+        .footer-bottom a {
+            color: var(--secondary-light);
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.15rem;
+            }
+            
+            .timeline::before {
+                left: 30px;
+            }
+            
+            .timeline-item,
+            .timeline-item:nth-child(even) {
+                padding-left: 70px;
+                padding-right: 0;
+                justify-content: flex-start;
+            }
+            
+            .timeline-dot {
+                left: 30px;
+            }
         }
 
         @media (max-width: 768px) {
-            .header h1 {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 20px;
+                gap: 4px;
+                box-shadow: var(--shadow-md);
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                z-index: 999;
+            }
+            
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(5px, -5px);
+            }
+            
+            .hero {
+                padding-top: 120px;
+                padding-bottom: 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            
+            .hero-avatar {
+                width: 140px;
+                height: 140px;
+                font-size: 3rem;
+            }
+            
+            .hero-stats {
+                gap: 25px;
+            }
+            
+            .hero-stat-number {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .contact-cta {
+                padding: 40px 25px;
+            }
+            
+            .contact-cta h3 {
+                font-size: 1.6rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
                 font-size: 2rem;
             }
-            .content {
-                padding: 20px;
+            
+            .hero-buttons .btn {
+                width: 100%;
+                justify-content: center;
             }
-            .tarja-clicavel span {
-                font-size: 1rem;
+            
+            .highlight-bar-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .cards-grid,
+            .acervo-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== PRINT STYLES ===== */
+        @media print {
+            .navbar,
+            .hero-buttons,
+            .back-to-top,
+            .contact-cta {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+                color: black;
+            }
+            
+            .card,
+            .acervo-category {
+                break-inside: avoid;
+                box-shadow: none;
+                border: 1px solid #ddd;
             }
         }
     </style>
 </head>
 <body>
+    <!-- NAVIGATION -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <span>⚖️</span> Erigutemberg<span style="color:var(--secondary)">.</span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link active">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#obras" class="nav-link">Obras</a></li>
+                <li><a href="#trajetoria" class="nav-link">Trajetória</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+                <li><a href="https://www.recantodasletras.com.br/autor.php?id=201160" target="_blank" class="btn btn-outline" style="padding: 8px 20px; font-size: 0.9rem;">📚 Recanto</a></li>
+            </ul>
+            
+            <div class="nav-toggle" id="navToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-avatar" aria-label="Foto de perfil">
+                    👤
+                </div>
+                
+                <h1>Erigutemberg Meneses</h1>
+                
+                <p class="hero-subtitle">
+                    Pioneiro em Neurodireito no Brasil • Inovador na intersecção entre Direito, Neurociência e Literatura
+                </p>
+                
+                <div class="hero-roles">
+                    <span class="hero-role">⚖️ Advogado</span>
+                    <span class="hero-role">📊 Economista</span>
+                    <span class="hero-role">📖 Escritor</span>
+                    <span class="hero-role">🧠 Pesquisador</span>
+                </div>
+                
+                <p class="hero-description">
+                    Com mais de 30 obras publicadas e 2.100+ textos literários, desenvolvo pesquisas pioneiras sobre justiça neurocompatível e modelos institucionais baseados em evidências científicas.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#obras" class="btn">
+                        <i class="fas fa-book"></i> Explorar Obras
+                    </a>
+                    <a href="#contato" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Entrar em Contato
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="30">0</span>
+                        <span class="hero-stat-label">Obras Publicadas</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="2100">0</span>
+                        <span class="hero-stat-label">Textos Literários</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="15">0</span>
+                        <span class="hero-stat-label">Publicações Autorais</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- DESTAQUE -->
     <div class="container">
-        <!-- CABEÇALHO -->
-        <div class="header">
-            <h1>Erigutemberg Meneses</h1>
-            <div class="subtitle">
-                ⚖️ Advogado &nbsp;|&nbsp; 📊 Economista &nbsp;|&nbsp; 📖 Escritor &nbsp;|&nbsp; 🧠 Pesquisador
-            </div>
-        </div>
-
-        <!-- CONTEÚDO PRINCIPAL -->
-                   </div>
-
-            <!-- DESCRIÇÃO PRINCIPAL -->
-            <div class="descricao-principal">
-                Mais de 30 obras publicadas · Pioneiro na interface entre Direito, Neurociência e Literatura.<br>
-                Referência nacional em justiça neurocompatível e inovação literária.
-            </div>
-
-            <!-- ESTATÍSTICAS -->
-            <div class="stats">
-                <div class="stat-card">
-                    <div class="stat-number">30+</div>
-                    <div class="stat-label">Obras</div>
+        <div class="highlight-bar" onclick="window.open('https://www.jusbrasil.com.br/busca?q=Erigutemberg+Meneses', '_blank')" role="button" tabindex="0" aria-label="Ver artigos no JusBrasil">
+            <div class="highlight-bar-content">
+                <div class="highlight-bar-icon">
+                    <i class="fas fa-newspaper"></i>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">2.100+</div>
-                    <div class="stat-label">Textos literários</div>
+                <div class="highlight-bar-text">
+                    <h3>📰 Artigos e Notícias no JusBrasil</h3>
+                    <p>Clique para acessar publicações jurídicas, análises e contribuições em veículos especializados</p>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-number">15+</div>
-                    <div class="stat-label">Publicações autorais</div>
-                </div>
-                       <!-- LINKS RÁPIDOS -->
-            <div class="links-section">
-                <a href="#" class="btn-link">📰 Ver notícias e artigos no JusBrasil</a>
-                <a href="https://www.recantodasletras.com.br/autor.php?id=201160" target="_blank" class="btn-link azul">✍️ Poesias no Recanto das Letras</a>
-                <a href="https://clubedeautores.com.br/books/search?where=books-search&what=Erigutemberg" target="_blank" class="btn-link">📖 Livros no Clube de Autores</a>
+                <i class="fas fa-arrow-right" style="margin-left: auto; opacity: 0.7;"></i>
             </div>
-
-            <!-- TRAJETÓRIA -->
-            <div class="section">
-                <h2>📌 Trajetória singular</h2>
-                <div class="section-grid">
-                    <div class="card">
-                        <h3>⚖️ Neurodireito & Justiça</h3>
-                        <p>Pesquisas sobre justiça neurocompatível e modelos institucionais baseados em evidências. Referência nacional com artigos no SSRN e DOI.</p>
-                    </div>
-                    <div class="card">
-                        <h3>📚 Literatura Multifacetada</h3>
-                        <p>Sonetos, crônicas, ensaios e crítica social. Livros físicos com QR codes e conteúdo multimídia.</p>
-                    </div>
-                    <div class="card">
-                        <h3>💡 Inovação Digital</h3>
-                        <p>Preservação digital, licenciamento Creative Commons e obras híbridas. Integração entre edições impressas e conteúdos exclusivos online.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ACERVO -->
-            <div class="section">
-                <h2>📖 Acervo Literário & Jurídico</h2>
-                <div class="section-grid">
-                    <div class="card">
-                        <h3>📜 Poesia / Sonetos</h3>
-                        <ul>
-                            <li>Há Sempre Uma Mulher</li>
-                            <li>Letras do Coração</li>
-                            <li>Sonetos Mindinhos e Seus Vizinhos</li>
-                            <li>Rotas de Outono</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>⚖️ Ensaio Jurídico</h3>
-                        <ul>
-                            <li>Neurodireito</li>
-                            <li>Teoria das Janelas Quebradas</li>
-                            <li>Neoliberalismo Judiciário</li>
-                            <li>Conselho Fiscal</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>📖 Ficção</h3>
-                        <ul>
-                            <li>O Eclipse Perpétuo</li>
-                            <li>Protocolo Eros: Arquitetura do Sentir</li>
-                            <li>Mnemópolis Adormecida</li>
-                        </ul>
-                    </div>
-                    <div class="card">
-                        <h3>👤 Biografia/Memória</h3>
-                        <ul>
-                            <li>Virgílio Várzea: Memórias das Velhas Gazetas</li>
-                            <li>Adolfo Caminha</li>
-                            <li>Quintino Cunha</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- RODAPÉ -->
-        <div class="footer">
-            <p>📍 Blumenau, Santa Catarina, Brasil</p>
-            <p>📧 Disponível para palestras, workshops e consultorias</p>
-            <p>
-                <a href="#">Temas para palestras</a> | 
-                <a href="#">Neurodireito</a> | 
-                <a href="#">Justiça Neurocompatível</a>
-            </p>
-            <p style="margin-top: 15px;">&copy; 2026 Erigutemberg Meneses - Todos os direitos reservados</p>
         </div>
     </div>
+
+    <!-- SOBRE -->
+    <section class="section" id="sobre">
+        <div class="container">
+            <div class="section-title">
+                <h2>Áreas de Atuação</h2>
+                <p>Integração multidisciplinar entre Direito, Economia, Neurociência e Literatura</p>
+            </div>
+            
+            <div class="cards-grid">
+                <article class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Neurodireito & Justiça</h3>
+                    <p>Pesquisas pioneiras sobre justiça neurocompatível, tomada de decisão judicial e modelos institucionais baseados em evidências neurocientíficas.</p>
+                    <a href="#" class="card-link">
+                        Saiba mais <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+                
+                <article class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                    <h3>Literatura & Poesia</h3>
+                    <p>Sonetos, crônicas, ensaios e crítica social com abordagem inovadora. Obras físicas com QR codes e conteúdo multimídia integrado.</p>
+                    <a href="https://www.recantodasletras.com.br/autor.php?id=201160" target="_blank" class="card-link">
+                        Ver no Recanto <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </article>
+                
+                <article class="card animate-on-scroll">
+                    <div class="card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Inovação Digital</h3>
+                    <p>Preservação digital, licenciamento Creative Commons e obras híbridas. Integração estratégica entre edições impressas e conteúdos online exclusivos.</p>
+                    <a href="#" class="card-link">
+                        Conheça o projeto <i class="fas fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- OBRAS -->
+    <section class="section" id="obras" style="background: var(--white);">
+        <div class="container">
+            <div class="section-title">
+                <h2>Acervo Literário & Jurídico</h2>
+                <p>Seleção de obras organizadas por categoria para facilitar sua navegação</p>
+            </div>
+            
+            <div class="acervo-grid">
+                <div class="acervo-category animate-on-scroll">
+                    <h4><i class="fas fa-heart" style="color:#e74c3c"></i> Poesia & Sonetos</h4>
+                    <ul>
+                        <li>Há Sempre Uma Mulher</li>
+                        <li>Letras do Coração</li>
+                        <li>Sonetos Mindinhos e Seus Vizinhos</li>
+                        <li>Rotas de Outono</li>
+                        <li>Ecos do Silêncio</li>
+                    </ul>
+                </div>
+                
+                <div class="acervo-category animate-on-scroll">
+                    <h4><i class="fas fa-gavel" style="color:#2c3e50"></i> Ensaio Jurídico</h4>
+                    <ul>
+                        <li>Neurodireito: Fundamentos</li>
+                        <li>Teoria das Janelas Quebradas</li>
+                        <li>Neoliberalismo Judiciário</li>
+                        <li>Conselho Fiscal & Governança</li>
+                        <li>Justiça Neurocompatível</li>
+                    </ul>
+                </div>
+                
+                <div class="acervo-category animate-on-scroll">
+                    <h4><i class="fas fa-book-open" style="color:#9b59b6"></i> Ficção</h4>
+                    <ul>
+                        <li>O Eclipse Perpétuo</li>
+                        <li>Protocolo Eros: Arquitetura do Sentir</li>
+                        <li>Mnemópolis Adormecida</li>
+                        <li>Crônicas do Amanhã</li>
+                    </ul>
+                </div>
+                
+                <div class="acervo-category animate-on-scroll">
+                    <h4><i class="fas fa-user" style="color:#27ae60"></i> Biografia & Memória</h4>
+                    <ul>
+                        <li>Virgílio Várzea: Memórias das Velhas Gazetas</li>
+                        <li>Adolfo Caminha: Vida e Obra</li>
+                        <li>Quintino Cunha: O Cronista</li>
+                        <li>Figuras do Direito Brasileiro</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="https://clubedeautores.com.br/books/search?where=books-search&what=Erigutemberg" target="_blank" class="btn btn-primary">
+                    <i class="fas fa-store"></i> Ver Todos os Livros no Clube de Autores
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRAJETÓRIA -->
+    <section class="section" id="trajetoria">
+        <div class="container">
+            <div class="section-title">
+                <h2>Trajetória Profissional</h2>
+                <p>Principais marcos na carreira multidisciplinar</p>
+            </div>
+            
+            <div class="timeline">
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Atual</div>
+                        <h4>Pesquisador em Neurodireito</h4>
+                        <p>Desenvolvimento de pesquisas sobre justiça neurocompatível com publicações em periódicos internacionais (SSRN, DOI).</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2024</div>
+                        <h4>Expansão Literária</h4>
+                        <p>Lançamento de obras híbridas com QR codes, integração de conteúdo multimídia e licenciamento Creative Commons.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2015 - 2020</div>
+                        <h4>Consolidação Acadêmica</h4>
+                        <p>Publicação de ensaios jurídicos pioneiros na interface Direito-Neurociência e participação em congressos nacionais.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item animate-on-scroll">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2010 - 2015</div>
+                        <h4>Início da Carreira</h4>
+                        <p>Atuação como advogado e economista, com início da produção literária no Recanto das Letras.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTATO / CTA -->
+    <section class="section" id="contato" style="padding-bottom: 40px;">
+        <div class="container">
+            <div class="contact-cta animate-on-scroll">
+                <h3>🎤 Palestras & Consultorias</h3>
+                <p>Disponível para palestras, workshops e consultorias especializadas em Neurodireito, Justiça Neurocompatível, Literatura e Inovação Digital.</p>
+                <a href="mailto:contato@erigutemberg.com.br" class="btn">
+                    <i class="fas fa-paper-plane"></i> Solicitar Contato
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3><span>⚖️</span> Erigutemberg Meneses</h3>
+                    <p>Advogado, Economista, Escritor e Pesquisador independente. Pioneiro em Neurodireito no Brasil.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.recantodasletras.com.br/autor.php?id=201160" target="_blank" aria-label="Recanto das Letras"><i class="fas fa-feather"></i></a>
+                        <a href="#" aria-label="ResearchGate"><i class="fab fa-researchgate"></i></a>
+                        <a href="#" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#inicio"><i class="fas fa-chevron-right"></i> Início</a></li>
+                        <li><a href="#sobre"><i class="fas fa-chevron-right"></i> Sobre</a></li>
+                        <li><a href="#obras"><i class="fas fa-chevron-right"></i> Obras</a></li>
+                        <li><a href="#trajetoria"><i class="fas fa-chevron-right"></i> Trajetória</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Temas para Palestras</h4>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Neurodireito</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Justiça Neurocompatível</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Inovação na Literatura</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Direito & Neurociência</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Links Externos</h4>
+                    <ul>
+                        <li><a href="https://www.jusbrasil.com.br" target="_blank"><i class="fas fa-external-link-alt"></i> JusBrasil</a></li>
+                        <li><a href="https://clubedeautores.com.br" target="_blank"><i class="fas fa-external-link-alt"></i> Clube de Autores</a></li>
+                        <li><a href="https://www.recantodasletras.com.br" target="_blank"><i class="fas fa-external-link-alt"></i> Recanto das Letras</a></li>
+                        <li><a href="https://ssrn.com" target="_blank"><i class="fas fa-external-link-alt"></i> SSRN</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>📍 Blumenau, Santa Catarina, Brasil</p>
+                <p>&copy; <span id="year">2026</span> Erigutemberg Meneses • Todos os direitos reservados</p>
+                <p style="margin-top: 8px;">
+                    <a href="#">Política de Privacidade</a> • 
+                    <a href="#">Termos de Uso</a> • 
+                    <a href="#">Acessibilidade</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Voltar ao topo">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JAVASCRIPT -->
+    <script>
+        // ===== NAVIGATION =====
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navbar = document.getElementById('navbar');
+        
+        navToggle?.addEventListener('click', () => {
+            navToggle.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+        
+        // Active link on scroll
+        const sections = document.querySelectorAll('section, .hero');
+        const navLinks = document.querySelectorAll('.nav-link');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href')?.slice(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // ===== BACK TO TOP =====
+        const backToTop = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+        
+        backToTop?.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        // ===== ANIMATED COUNTERS =====
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.hero-stat-number');
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-count'));
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current) + (target > 100 ? '+' : '');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target + (target > 100 ? '+' : '');
+                    }
+                };
+                
+                // Start animation when element is visible
+                const observer = new IntersectionObserver((entries) => {
+                    if (entries[0].isIntersecting) {
+                        updateCounter();
+                        observer.disconnect();
+                    }
+                }, { threshold: 0.5 });
+                
+                observer.observe(counter);
+            });
+        };
+        
+        // ===== SCROLL ANIMATIONS =====
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            elements.forEach(el => observer.observe(el));
+        };
+        
+        // ===== HIGHLIGHT BAR KEYBOARD ACCESS =====
+        const highlightBar = document.querySelector('.highlight-bar');
+        highlightBar?.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                window.open('https://www.jusbrasil.com.br/busca?q=Erigutemberg+Meneses', '_blank');
+            }
+        });
+        
+        // ===== INITIALIZE =====
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('year').textContent = new Date().getFullYear();
+            animateCounters();
+            animateOnScroll();
+            
+            // Trigger animations for elements already in view
+            setTimeout(() => {
+                document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+                        el.classList.add('animated');
+                    }
+                });
+            }, 100);
+        });
+        
+        // ===== SMOOTH SCROLL FOR ANCHOR LINKS =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,420 +1,472 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Erigutemberg Meneses | Site Oficial</title>
-    <meta name="description" content="Site oficial de Erigutemberg Meneses - portfólio, perfil profissional e informações de contato.">
-    <meta name="author" content="Erigutemberg Meneses">
-    <meta name="robots" content="index, follow">
-    <!-- Estilos principais - clean, responsivo e centralização do nome -->
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Erigutemberg Meneses | Direito · Neurociência · Literatura</title>
+  <!-- Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background: linear-gradient(145deg, #f8fafc 0%, #eef2f5 100%);
-            color: #0a1e2f;
-            line-height: 1.5;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            scroll-behavior: smooth;
-        }
+    body {
+      background: #0a0c12;
+      font-family: 'Inter', sans-serif;
+      color: #eef2ff;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
 
-        /* container principal com largura agradável */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-            flex: 1;
-        }
+    /* dynamic gradient background */
+    .bg-aura {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: radial-gradient(circle at 20% 30%, #0b1120, #03060c);
+    }
 
-        /* ========== SEÇÃO DE CABEÇALHO E NOME CENTRALIZADO ========== */
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 2.5rem 1rem 3rem 1rem;
-            border-radius: 2.5rem;
-            background: rgba(255,255,255,0.6);
-            backdrop-filter: blur(2px);
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-        }
+    .bg-aura::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: repeating-linear-gradient(45deg, rgba(80, 120, 255, 0.02) 0px, rgba(80, 120, 255, 0.02) 2px, transparent 2px, transparent 8px);
+      pointer-events: none;
+    }
 
-        /* Nome centralizado – principal exigência */
-        .nome-centralizado {
-            font-size: clamp(2.2rem, 8vw, 4rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, #0b2b3d, #1a5f7a);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            margin-bottom: 0.75rem;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.02);
-            border-bottom: 3px solid rgba(26, 95, 122, 0.2);
-            display: inline-block;
-            padding-bottom: 0.3rem;
-        }
+    /* main container */
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 2rem 2rem 4rem;
+      position: relative;
+    }
 
-        .titulo-profissao {
-            font-size: 1.25rem;
-            color: #2c5a6e;
-            font-weight: 500;
-            background: #e9f0f4;
-            display: inline-block;
-            padding: 0.3rem 1.2rem;
-            border-radius: 40px;
-            margin-top: 0.5rem;
-            backdrop-filter: blur(4px);
-        }
+    /* header with parallax effect */
+    .hero {
+      text-align: center;
+      padding: 3rem 1rem 4rem;
+      border-bottom: 1px solid rgba(100, 150, 255, 0.2);
+      margin-bottom: 3rem;
+      backdrop-filter: blur(2px);
+    }
 
-        /* grid para informações / cards */
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0 2rem;
-        }
+    .hero-badge {
+      display: inline-block;
+      background: rgba(59, 130, 246, 0.2);
+      backdrop-filter: blur(8px);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      margin-bottom: 1.8rem;
+      text-transform: uppercase;
+    }
 
-        .card {
-            background: white;
-            border-radius: 1.75rem;
-            padding: 1.8rem;
-            box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.08);
-            transition: transform 0.2s ease, box-shadow 0.2s;
-            border: 1px solid rgba(0,0,0,0.03);
-        }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFFFFF, #A0C0FF, #6C8CFF);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.75rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
 
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 24px 36px -12px rgba(0, 0, 0, 0.12);
-        }
+    .subhead {
+      font-size: 1.5rem;
+      font-weight: 500;
+      color: #C0D0FF;
+      margin-bottom: 1.2rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.75rem;
+    }
 
-        .card h2 {
-            font-size: 1.6rem;
-            font-weight: 600;
-            margin-bottom: 1.25rem;
-            border-left: 5px solid #1a5f7a;
-            padding-left: 1rem;
-            color: #0e3b4b;
-        }
+    .subhead span {
+      background: rgba(20, 30, 55, 0.6);
+      backdrop-filter: blur(4px);
+      padding: 0.2rem 1rem;
+      border-radius: 40px;
+      font-size: 1rem;
+      font-weight: 400;
+    }
 
-        .card p, .card li {
-            color: #1f3e4c;
-            font-size: 1rem;
-        }
+    .hero-desc {
+      max-width: 780px;
+      margin: 1.5rem auto 0;
+      font-size: 1.1rem;
+      color: #cdd9ff;
+      border-left: 3px solid #3b82f6;
+      padding-left: 1.5rem;
+      text-align: left;
+    }
 
-        .card ul {
-            list-style: none;
-            padding-left: 0;
-        }
+    /* Botão JusBrasil - estilo integrado */
+    .btn-jusbrasil {
+      display: inline-block;
+      background: #0057a3;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      margin-top: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
 
-        .card li {
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
+    .btn-jusbrasil:hover {
+      background: #003f75;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0,87,163,0.3);
+    }
 
-        .card li::before {
-            content: "▹";
-            color: #1a5f7a;
-            font-weight: bold;
-        }
+    .btn-jusbrasil i {
+      margin-right: 8px;
+    }
 
-        /* contato / redes sociais - sem qualquer link para wikipedia */
-        .social-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
+    /* cards grid */
+    .grid-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 4rem 0;
+    }
 
-        .btn-social {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: #f0f4f8;
-            padding: 0.6rem 1.3rem;
-            border-radius: 60px;
-            text-decoration: none;
-            font-weight: 500;
-            color: #1a5f7a;
-            transition: all 0.2s;
-            border: 1px solid #dce5ec;
-        }
+    .card {
+      background: rgba(12, 18, 34, 0.65);
+      backdrop-filter: blur(12px);
+      border-radius: 2rem;
+      border: 1px solid rgba(66, 110, 210, 0.25);
+      transition: all 0.35s ease;
+      overflow: hidden;
+      padding: 1.8rem 1.5rem;
+      box-shadow: 0 20px 35px -15px rgba(0,0,0,0.4);
+    }
 
-        .btn-social:hover {
-            background: #e1eef5;
-            transform: scale(1.02);
-            border-color: #8eb9cb;
-            color: #0a2e3d;
-        }
+    .card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(59, 130, 246, 0.6);
+      box-shadow: 0 28px 35px -18px #1e2a5e40;
+      background: rgba(16, 24, 44, 0.75);
+    }
 
-        /* rodapé sem links externos indesejados */
-        footer {
-            background: #0f2c38;
-            color: #cddfe6;
-            text-align: center;
-            padding: 2rem 1rem;
-            margin-top: 2rem;
-            font-size: 0.85rem;
-            border-top-left-radius: 2rem;
-            border-top-right-radius: 2rem;
-        }
+    .card-icon {
+      font-size: 2.8rem;
+      color: #5d8eff;
+      margin-bottom: 1.2rem;
+    }
 
-        footer a {
-            color: #b9dfed;
-            text-decoration: none;
-            font-weight: 500;
-        }
+    .card h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 0.8rem;
+    }
 
-        footer a:hover {
-            text-decoration: underline;
-            color: white;
-        }
+    .stats {
+      display: flex;
+      gap: 1.8rem;
+      margin: 1.5rem 0 0.8rem;
+      flex-wrap: wrap;
+    }
 
-        /* botão sutil */
-        .btn-contato {
-            background: #1a5f7a;
-            color: white;
-            border: none;
-            padding: 0.7rem 1.5rem;
-            border-radius: 40px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: 0.2s;
-            margin-top: 0.8rem;
-            font-size: 0.9rem;
-        }
+    .stat-item {
+      text-align: center;
+      background: rgba(0,0,0,0.3);
+      padding: 0.4rem 1rem;
+      border-radius: 60px;
+    }
 
-        .btn-contato:hover {
-            background: #0e465c;
-            transform: scale(0.98);
-        }
+    .stat-number {
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: white;
+      line-height: 1;
+    }
 
-        hr {
-            margin: 1rem 0;
-            border: 0;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #cbdde6, transparent);
-        }
+    /* seção dupla */
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin: 4rem 0;
+      background: linear-gradient(115deg, rgba(8, 12, 28, 0.7), rgba(20, 28, 50, 0.5));
+      border-radius: 2rem;
+      backdrop-filter: blur(8px);
+      padding: 2rem;
+      border: 1px solid rgba(70, 120, 240, 0.3);
+    }
 
-        /* responsividade extra */
-        @media (max-width: 640px) {
-            .container {
-                padding: 1rem;
-            }
-            .hero {
-                padding: 1.8rem 0.5rem;
-            }
-            .card {
-                padding: 1.3rem;
-            }
-        }
+    .feature-text {
+      flex: 2;
+    }
 
-        /* remover qualquer link fantasma ou direcionamento externo não solicitado */
-        .no-wiki {
-            /* garantia visual */
-        }
-    </style>
+    .feature-text h2 {
+      font-size: 2rem;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 1rem;
+      background: linear-gradient(120deg, #ffffff, #90aaff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .btn-outline {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.7rem 1.6rem;
+      border: 1px solid #4f7eff;
+      border-radius: 60px;
+      color: #c6ddff;
+      font-weight: 600;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .btn-outline:hover {
+      background: #2a4bcc50;
+      border-color: #8aaeff;
+      color: white;
+    }
+
+    .bookshelf {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .book-item {
+      background: rgba(0, 0, 0, 0.35);
+      border-radius: 1.2rem;
+      padding: 1rem 1.2rem;
+      transition: all 0.2s;
+      border-left: 4px solid #3b82f6;
+    }
+
+    .book-item strong {
+      display: block;
+      font-size: 1rem;
+      color: #bbd4ff;
+    }
+
+    .pill {
+      background: #1e2b4e;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      font-size: 0.7rem;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 6px;
+    }
+
+    footer {
+      margin-top: 5rem;
+      text-align: center;
+      border-top: 1px solid rgba(80, 120, 255, 0.2);
+      padding-top: 2.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    @media (max-width: 760px) {
+      h1 { font-size: 2.8rem; }
+      .container { padding: 1rem; }
+      .hero { padding: 1.5rem 0.5rem; }
+      .subhead span { font-size: 0.8rem; }
+    }
+
+    .glow-text {
+      color: #b9d0ff;
+    }
+    .highlight {
+      color: #ffd966;
+    }
+    a {
+      text-decoration: none;
+    }
+    i.fab, i.fas {
+      margin-right: 6px;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <!-- SEÇÃO PRINCIPAL: NOME CENTRALIZADO conforme exigência -->
-        <div class="hero">
-            <!-- Nome centralizado (elemento visualmente e estruturalmente centralizado) -->
-            <h1 class="nome-centralizado">Erigutemberg Meneses</h1>
-            <div class="titulo-profissao">✧ Especialista em Inovação & Desenvolvimento ✧</div>
-            <p style="max-width: 600px; margin-top: 1.2rem; color: #2c6075; font-weight: 500;">
-                Tecnologia, estratégia e propósito para transformar ideias em soluções reais.
-            </p>
-            <!-- pequeno detalhe decorativo, nenhum link externo indesejado -->
-        </div>
-
-        <!-- CONTEÚDO PRINCIPAL COM CARDS (NENHUM LINK PARA WIKIPEDIA) -->
-        <div class="info-grid">
-            <!-- Sobre / Biografia resumida -->
-            <div class="card">
-                <h2>📌 Sobre mim</h2>
-                <p>Profissional com trajetória sólida em tecnologia da informação, gestão de projetos e inovação digital. Erigutemberg Meneses combina visão estratégica e execução técnica para gerar resultados de alto impacto.</p>
-                <p style="margin-top: 0.8rem;">Ao longo dos anos, atuou em iniciativas de transformação digital, desenvolvimento de sistemas e liderança de times multidisciplinares. Apaixonado por aprendizado contínuo e compartilhamento de conhecimento.</p>
-                <hr>
-                <p><strong>📍 Localização:</strong> Brasil (disponível para projetos remotos e consultorias)</p>
-            </div>
-
-            <!-- Áreas de atuação / expertise -->
-            <div class="card">
-                <h2>🚀 Expertise</h2>
-                <ul>
-                    <li>Arquitetura de soluções & Desenvolvimento Full Stack</li>
-                    <li>Gestão de produtos ágeis (Scrum, Kanban)</li>
-                    <li>Liderança técnica e mentorias</li>
-                    <li>Estratégias de inovação e transformação digital</li>
-                    <li>Cloud Computing (AWS, Azure fundamentals)</li>
-                    <li>Análise de dados e tomada de decisão orientada a dados</li>
-                </ul>
-            </div>
-
-            <!-- Contato / redes sociais - nenhum link para wikipedia, garantido -->
-            <div class="card">
-                <h2>📫 Conecte-se</h2>
-                <p>Entre em contato para colaborações, palestras, parcerias ou oportunidades profissionais.</p>
-                <div class="social-links">
-                    <!-- Links profissionais reais (simbólicos, mas sem wikipedia) -->
-                    <a href="#" class="btn-social" aria-label="LinkedIn (placeholder)">🔗 LinkedIn</a>
-                    <a href="#" class="btn-social" aria-label="GitHub (placeholder)">🐙 GitHub</a>
-                    <a href="#" class="btn-social" aria-label="E-mail de contato">📧 E-mail</a>
-                </div>
-                <div style="margin-top: 1.2rem;">
-                    <p style="font-size: 0.85rem; color: #386a7e;">📞 +55 (85) 99999-9999 (exemplo institucional)</p>
-                    <button class="btn-contato" id="copyEmailBtn" aria-label="Copiar e-mail profissional">✉️ copiar e-mail</button>
-                </div>
-                <!-- Mensagem de status para copiar e-mail -->
-                <div id="emailCopyMsg" style="font-size: 0.75rem; margin-top: 0.5rem; color: #1f7a5a;"></div>
-            </div>
-        </div>
-
-        <!-- Seção complementar: Projetos / Diferenciais (sem nenhuma referência à Wikipedia) -->
-        <div style="background: #ffffffcc; border-radius: 2rem; padding: 1.8rem; margin-top: 1rem; backdrop-filter: blur(4px);">
-            <h2 style="font-size: 1.7rem; font-weight: 600; margin-bottom: 1.2rem; color: #0e3b4b; text-align: center;">🌟 Destaques & Realizações</h2>
-            <div style="display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: space-between;">
-                <div style="flex: 1; min-width: 200px;">
-                    <h3 style="color: #1a5f7a;">✔ Projetos estratégicos</h3>
-                    <p>Implementação de plataformas digitais para médias empresas, aumentando eficiência operacional em até 35%.</p>
-                </div>
-                <div style="flex: 1; min-width: 200px;">
-                    <h3 style="color: #1a5f7a;">✔ Mentoria & Palestras</h3>
-                    <p>Já impactou mais de 500 profissionais em workshops sobre carreira tech e inovação ágil.</p>
-                </div>
-                <div style="flex: 1; min-width: 200px;">
-                    <h3 style="color: #1a5f7a;">✔ Open Source</h3>
-                    <p>Contribuições ativas para bibliotecas e comunidades, fortalecendo o ecossistema de software livre.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Linha de citação / missão pessoal -->
-        <div style="margin: 2rem auto 1rem; text-align: center; max-width: 700px;">
-            <p style="font-style: italic; color: #2f6e85; background: #eef5f9; padding: 0.8rem 1.5rem; border-radius: 60px;">
-                “Inovar com propósito, construir com excelência e compartilhar conhecimento são os pilares da minha trajetória.”
-            </p>
-        </div>
+<div class="bg-aura"></div>
+<div class="container">
+  <div class="hero">
+    <div class="hero-badge">
+      <i class="fas fa-brain"></i> PIONEIRO EM NEURODIREITO NO BRASIL
     </div>
+    <h1>Erigutemberg Meneses</h1>
+    <div class="subhead">
+      <span>⚖️ Advogado</span>
+      <span>📊 Economista</span>
+      <span>📖 Escritor</span>
+      <span>🧠 Pesquisador</span>
+    </div>
+    <div class="hero-desc">
+      <i class="fas fa-quote-left" style="margin-right: 8px; opacity: 0.7;"></i> 
+      Mais de 30 obras publicadas · Pioneiro na interface entre Direito, Neurociência e Literatura. 
+      Referência nacional em justiça neurocompatível e inovação literária.
+    </div>
+    <!-- BOTÃO JUSBRASIL INSERIDO AQUI (HERO) -->
+    <div style="margin-top: 2rem;">
+      <a href="https://www.jusbrasil.com.br/artigos-noticias/busca?q=Erigutemberg&p=1" 
+         target="_blank" 
+         rel="noopener noreferrer"
+         class="btn-jusbrasil">
+         <i class="fas fa-newspaper"></i> Ver notícias e artigos no JusBrasil
+      </a>
+    </div>
+  </div>
 
-    <footer>
-        <p>© <span id="currentYear"></span> Erigutemberg Meneses — Site Oficial. Todos os direitos reservados.</p>
-        <p style="margin-top: 0.5rem; font-size: 0.75rem;">Desenvolvido com dedicação e foco em simplicidade profissional.</p>
-        <p style="margin-top: 0.8rem;">
-            <a href="#" style="margin: 0 0.5rem;">Política de Privacidade</a> • 
-            <a href="#" style="margin: 0 0.5rem;">Contato direto</a>
-        </p>
-        <!-- Garantia absoluta: não há nenhum href apontando para wikipedia ou qualquer redirecionamento externo não autorizado -->
-    </footer>
+  <!-- BIO + DESTAQUES -->
+  <div class="feature-row">
+    <div class="feature-text">
+      <h2><i class="fas fa-user-astronaut"></i> Trajetória singular</h2>
+      <p style="font-size: 1.05rem; margin-bottom: 0.8rem;">Natural de Fortaleza (CE), José Erigutemberg Meneses de Lima une prática jurídica, pesquisa acadêmica e criação literária. Formado em Direito e Ciências Econômicas pela FURB, atuou como advogado do Banco do Brasil até a aposentadoria.</p>
+      <p>Reconhecido como pioneiro no <strong class="highlight">Neurodireito no Brasil</strong>, sua produção acadêmica investiga epigenética, trauma intergeracional e neurodesenvolvimento adolescente. Seus artigos estão no SSRN e sua monografia "Neurodireito: Repercussões e Implicações da Neurociência para o Direito Penal" (2013) é referência nacional.</p>
+      <a href="#contato" class="btn-outline"><i class="fas fa-microphone-alt"></i> Convide para palestras</a>
+    </div>
+    <div style="flex: 1; background: rgba(0,0,0,0.3); border-radius: 1.5rem; padding: 1.5rem; text-align: center;">
+      <i class="fas fa-chalkboard-user" style="font-size: 2.5rem; color: #6c8eff;"></i>
+      <div class="stats" style="justify-content: center; margin-top: 1rem;">
+        <div class="stat-item"><span class="stat-number">30+</span><br>Obras</div>
+        <div class="stat-item"><span class="stat-number">2.100+</span><br>Textos literários</div>
+        <div class="stat-item"><span class="stat-number">15+</span><br>Publicações autorais</div>
+      </div>
+      <div style="margin-top: 1rem;">
+        <span class="pill"><i class="fas fa-microchip"></i> Neurodireito vanguardista</span>
+        <span class="pill"><i class="fas fa-dna"></i> Epigenética & Direito</span>
+      </div>
+    </div>
+  </div>
 
-    <!-- Script simples para funcionalidade de cópia de e-mail, dinamismo e ano atual - sem qualquer manipulação de link para wikipedia -->
-    <script>
-        (function() {
-            // Preencher ano atual no rodapé
-            const yearSpan = document.getElementById('currentYear');
-            if (yearSpan) {
-                yearSpan.textContent = new Date().getFullYear();
-            }
+  <!-- CARDS DE ÁREAS -->
+  <div class="grid-cards">
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-gavel"></i></div>
+      <h3>Neurodireito & Justiça</h3>
+      <p>Pesquisas sobre <strong>justiça neurocompatível</strong> e modelos institucionais baseados em evidências. Referência nacional com artigos no SSRN e DOI: 10.2139/ssrn.5879522 (2025).</p>
+      <div style="margin-top: 12px;"><i class="fas fa-scroll"></i> "Neurocompatible Justice: An Evidence-Based Institutional Model"</div>
+    </div>
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-feather-alt"></i></div>
+      <h3>Literatura Multifacetada</h3>
+      <p>Sonetos, crônicas, ensaios e crítica social. Fusão de Torquato Neto, Leminski e musicalidade brasileira. Livros físicos com QR codes e conteúdo multimídia.</p>
+      <div class="stats" style="margin-top: 12px;"><div class="stat-item"><span class="stat-number">12+</span><br>Livros de poesia</div><div class="stat-item"><span class="stat-number">8+</span><br>Ensaios jurídicos</div></div>
+    </div>
+    <div class="card">
+      <div class="card-icon"><i class="fas fa-qrcode"></i></div>
+      <h3>Inovação Digital</h3>
+      <p>Preservação digital, licenciamento Creative Commons e obras híbridas. Integração entre edições impressas e conteúdos exclusivos online.</p>
+      <div><i class="fas fa-mobile-alt"></i> QR Codes em livros impressos para acesso a vídeos e artigos.</div>
+    </div>
+  </div>
 
-            // Configurar funcionalidade de cópia do e-mail (contato demonstrativo)
-            const copyBtn = document.getElementById('copyEmailBtn');
-            const msgDiv = document.getElementById('emailCopyMsg');
-            
-            if (copyBtn) {
-                copyBtn.addEventListener('click', function() {
-                    // E-mail profissional fictício mas coeso com o contexto
-                    const emailAddress = 'contato@erigutembergmeneses.com.br';
-                    // Usa a API clipboard moderna
-                    navigator.clipboard.writeText(emailAddress).then(() => {
-                        if (msgDiv) {
-                            msgDiv.textContent = '✉️ E-mail copiado: ' + emailAddress;
-                            msgDiv.style.opacity = '1';
-                            setTimeout(() => {
-                                msgDiv.style.opacity = '0';
-                                setTimeout(() => {
-                                    msgDiv.textContent = '';
-                                    msgDiv.style.opacity = '1';
-                                }, 300);
-                            }, 2500);
-                        } else {
-                            alert('E-mail copiado: ' + emailAddress);
-                        }
-                    }).catch(err => {
-                        console.warn('Erro ao copiar: ', err);
-                        if (msgDiv) {
-                            msgDiv.textContent = '⚠️ Não foi possível copiar manualmente.';
-                            setTimeout(() => {
-                                msgDiv.textContent = '';
-                            }, 2000);
-                        }
-                    });
-                });
-            }
+  <!-- OBRAS EM DESTAQUE COM ESTILO -->
+  <div style="margin: 3rem 0 2rem;">
+    <h2 style="font-size: 2rem; font-family: 'Playfair Display'; border-left: 5px solid #3b82f6; padding-left: 1rem;"><i class="fas fa-book-open"></i> Acervo Literário & Jurídico</h2>
+    <div class="bookshelf">
+      <div class="book-item"><strong>📜 Poesia / Sonetos</strong> Há Sempre Uma Mulher, Letras do Coração, Sonetos Mindinhos e Seus Vizinhos, Rotas de Outono</div>
+      <div class="book-item"><strong>⚖️ Ensaio Jurídico</strong> Neurodireito, Teoria das Janelas Quebradas, Neoliberalismo Judiciário, Conselho Fiscal</div>
+      <div class="book-item"><strong>📖 Ficção</strong> O Eclipse Perpétuo, Protocolo Eros: Arquitetura do Sentir, Mnemópolis Adormecida</div>
+      <div class="book-item"><strong>👤 Biografia/Memória</strong> Virgílio Várzea: Memórias das Velhas Gazetas, Adolfo Caminha, Quintino Cunha</div>
+      <div class="book-item"><strong>💬 Crítica Social</strong> A Bíblia Não É Para Crianças, Cartapácio Almanaqueano</div>
+    </div>
+  </div>
 
-            // Adicionar pequeno tratamento para links placeholder (#) não recarregarem a página inesperadamente
-            const allPlaceholderLinks = document.querySelectorAll('a[href="#"]');
-            allPlaceholderLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    // Apenas para evitar comportamento de scroll top indesejado, mas mantém integridade.
-                    // Nenhum redirecionamento externo.
-                    if (link.textContent.includes('LinkedIn') || link.textContent.includes('GitHub') || link.textContent.includes('E-mail')) {
-                        // Mostra um aviso amigável de que links serão atualizados em breve (sem redirecionar)
-                        alert('🔗 Link oficial em desenvolvimento. Em breve mais informações de contato direto.');
-                    }
-                });
-            });
+  <!-- PRODUÇÃO RECENTE E ORCID COM DADOS IMPACTANTES -->
+  <div class="feature-row" style="flex-direction: row-reverse;">
+    <div class="feature-text">
+      <h2><i class="fas fa-chart-line"></i> Pesquisa & Reconhecimento</h2>
+      <ul style="margin-left: 1.2rem; list-style-type: none;">
+        <li><i class="fas fa-check-circle" style="color:#4c9aff;"></i> <strong>2026:</strong> Livros pela Editora Dialética (ISBN: 9786527411789 e 9786527409823)</li>
+        <li><i class="fas fa-check-circle" style="color:#4c9aff;"></i> <strong>2025:</strong> Artigo SSRN com DOI: 10.2139/ssrn.5879522 — Justiça Neurocompatível</li>
+        <li><i class="fas fa-check-circle" style="color:#4c9aff;"></i> <strong>Revista Jurídica UNICURITIBA</strong> (ISSN: 2316-753X) — artigos sobre direito e neurociência</li>
+        <li><i class="fas fa-graduation-cap"></i> Monografia “Neurodireito” citada em teses de doutorado em todo o Brasil</li>
+      </ul>
+      <p style="margin-top: 1rem;"> Pioneiro na interface entre epigenética, trauma intergeracional e justiça criminal, apresenta soluções inovadoras para o sistema de justiça baseadas em evidências neurocientíficas.</p>
+    </div>
+    <div style="flex: 0.8; background: linear-gradient(145deg, #09142e, #020617); border-radius: 1.8rem; padding: 1.8rem; text-align: center;">
+      <i class="fas fa-microscope" style="font-size: 2.8rem; color: #9bbaff;"></i>
+      <div style="font-weight: 700; margin: 0.8rem 0;">ORCID & SSRN</div>
+      <p style="font-size: 0.85rem;">Publicações recentes indexadas, modelo de justiça neurocompatível e discussão sobre neurodesenvolvimento adolescente.</p>
+      <div><span class="pill"><i class="fab fa-orcid"></i> Perfil acadêmico ativo</span></div>
+    </div>
+  </div>
 
-            // Também prevenir qualquer evento de clique não intencional nos links do footer placeholder
-            const footerLinks = document.querySelectorAll('footer a');
-            footerLinks.forEach(link => {
-                link.addEventListener('click', (e) => {
-                    if(link.getAttribute('href') === '#') {
-                        e.preventDefault();
-                        alert('📄 Esta seção estará disponível em breve. Obrigado pela compreensão.');
-                    }
-                });
-            });
+  <!-- PIONEIRISMO E TECNOLOGIA -->
+  <div style="background: rgba(0, 10, 30, 0.5); border-radius: 2rem; padding: 2rem; margin: 2rem 0; text-align: center; border: 1px solid #2d4070;">
+    <i class="fas fa-brain" style="font-size: 2.4rem; color: #ffbc6e;"></i>
+    <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">🇧🇷 Pioneiro no Neurodireito no Brasil</h3>
+    <p style="max-width: 800px; margin: 0 auto;">Com mais de uma década de pesquisa, Erigutemberg Meneses revoluciona o debate sobre Direito Penal e Neurociência, sendo referência em justiça restaurativa e reforma sistêmica baseada em evidências. Suas obras integram sensibilidade literária e rigor científico.</p>
+    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-top: 1.5rem;">
+      <span class="pill"><i class="fas fa-dna"></i> Epigenética jurídica</span>
+      <span class="pill"><i class="fas fa-child"></i> Neurodesenvolvimento adolescente</span>
+      <span class="pill"><i class="fas fa-balance-scale"></i> Justiça neurocompatível</span>
+    </div>
+  </div>
 
-            // Por segurança, verificar se existe qualquer âncora ou redirecionamento escondido para wikipedia.
-            // Remover qualquer possível resquício de links que contenham 'wikipedia' no href, caso exista algum gerado por engano.
-            // Essa checagem extra garante que o arquivo não contenha direcionamentos para wikipedia, como solicitado.
-            const allLinks = document.querySelectorAll('a');
-            allLinks.forEach(link => {
-                const hrefAttr = link.getAttribute('href');
-                if (hrefAttr && (hrefAttr.includes('wikipedia.org') || hrefAttr.includes('wiki/') || hrefAttr.toLowerCase().includes('wikipedia'))) {
-                    // Se por qualquer motivo um link residual existir, removemos o atributo e substituímos por '#'
-                    console.warn('Link indesejado detectado e removido:', hrefAttr);
-                    link.setAttribute('href', '#');
-                    link.setAttribute('aria-label', 'Link removido conforme política do site');
-                    link.style.cursor = 'not-allowed';
-                    link.style.opacity = '0.6';
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        alert('Este direcionamento foi removido conforme diretriz do site oficial.');
-                    });
-                }
-            });
+  <!-- CONTATO E ÁREAS DE ATUAÇÃO -->
+  <div id="contato" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: space-between; margin-top: 3rem; background: radial-gradient(ellipse at left, #10192e, #03050b); border-radius: 2rem; padding: 2rem;">
+    <div style="flex:1">
+      <h3><i class="fas fa-map-marker-alt"></i> Localização & Conexão</h3>
+      <p><i class="fas fa-city"></i> Blumenau, Santa Catarina, Brasil</p>
+      <p><i class="fas fa-chalkboard"></i> Disponível para palestras sobre Neurodireito, workshops de escrita criativa, consultoria em preservação digital e projetos de pesquisa interdisciplinares.</p>
+      <div style="margin-top: 1rem;">
+        <a href="#" class="btn-outline" style="background: #1f2b4e;"><i class="fas fa-envelope"></i> Contato para eventos</a>
+        <a href="#" class="btn-outline" style="margin-left: 1rem;"><i class="fab fa-linkedin"></i> Perfil acadêmico</a>
+      </div>
+    </div>
+    <div style="flex:1; border-left: 1px solid #2f4172; padding-left: 2rem;">
+      <h4><i class="fas fa-microphone-alt"></i> Temas para palestras</h4>
+      <ul style="list-style: none;">
+        <li><i class="fas fa-angle-right"></i> Neurodireito: revolução na justiça criminal</li>
+        <li><i class="fas fa-angle-right"></i> Justiça Neurocompatível: modelos baseados em evidências</li>
+        <li><i class="fas fa-angle-right"></i> Epigenética, trauma e responsabilidade penal</li>
+        <li><i class="fas fa-angle-right"></i> Literatura, memória e inovação digital</li>
+      </ul>
+      <div class="stats" style="margin-top: 1rem;">
+        <div class="stat-item"><i class="fas fa-book"></i> 30+ livros publicados</div>
+        <div class="stat-item"><i class="fas fa-brain"></i> 12 anos em Neurodireito</div>
+      </div>
+      <!-- BOTÃO JUSBRASIL INSERIDO TAMBÉM AQUI (opcional, segunda via) -->
+      <div style="margin-top: 1.5rem;">
+        <a href="https://www.jusbrasil.com.br/artigos-noticias/busca?q=Erigutemberg&p=1" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           class="btn-jusbrasil" 
+           style="display: inline-block; font-size: 0.9rem; padding: 8px 18px;">
+           <i class="fas fa-newspaper"></i> Artigos no JusBrasil
+        </a>
+      </div>
+    </div>
+  </div>
 
-            // mensagem de boas-vindas console (opcional, apenas para verificação)
-            console.log('✅ Site oficial de Erigutemberg Meneses carregado. Nome centralizado, nenhum link para Wikipedia.');
-        })();
-    </script>
-    <!-- 
-          -->
+  <footer>
+    <div>© 2026 Erigutemberg Meneses — Advogado • Escritor • Pesquisador</div>
+    <div><i class="fas fa-creative-commons"></i> Licenciamento Creative Commons para fins educacionais e culturais</div>
+    <div><i class="fas fa-qrcode"></i> Integração física-digital | Neurociência & Literatura</div>
+  </footer>
+</div>
 </body>
 </html>
